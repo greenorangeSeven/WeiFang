@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>9041C9C6-32CC-4825-99A0-B23AC00B1135</string>
+	<key>IDESourceControlProjectName</key>
+	<string>WeiFang</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>B094E37B-3640-40F3-81A6-E30F14737A54</key>
+		<string>ssh://github.com/greenorangeSeven/WeiFang.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>WeiFang.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>B094E37B-3640-40F3-81A6-E30F14737A54</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/greenorangeSeven/WeiFang.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>B094E37B-3640-40F3-81A6-E30F14737A54</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>B094E37B-3640-40F3-81A6-E30F14737A54</string>
+			<key>IDESourceControlWCCName</key>
+			<string>WeiFang</string>
+		</dict>
+	</array>
+</dict>
+</plist>
