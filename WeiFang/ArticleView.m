@@ -20,7 +20,7 @@
     if (self) {
         UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 100, 44)];
         titleLabel.font = [UIFont boldSystemFontOfSize:18];
-        titleLabel.text = @"居委会通知";
+        titleLabel.text = @"社区办事";
         titleLabel.backgroundColor = [UIColor clearColor];
         titleLabel.textColor = [Tool getColorForGreen];
         titleLabel.textAlignment = UITextAlignmentCenter;

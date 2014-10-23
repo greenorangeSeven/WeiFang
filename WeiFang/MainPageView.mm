@@ -27,7 +27,7 @@
     if (self) {
         UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 150, 44)];
         titleLabel.font = [UIFont boldSystemFontOfSize:18];
-        titleLabel.text = @"潍坊智慧社区";
+        titleLabel.text = @"绘生活";
         titleLabel.backgroundColor = [UIColor clearColor];
         titleLabel.textColor = [Tool getColorForGreen];
         titleLabel.textAlignment = NSTextAlignmentCenter;
@@ -231,84 +231,60 @@
     }
 }
 
-- (IBAction)clickLAW:(UIButton *)sender
-{
-    LawView *lawView = [[LawView alloc] init];
-    [self.navigationController pushViewController:lawView animated:YES];
-}
 
-- (IBAction)bianminAction:(UIButton *)sender
-{
-    ConvView *bianminView = [[ConvView alloc] init];
-    [self.navigationController pushViewController:bianminView animated:YES];
-}
-
-- (IBAction)clickCityCulture:(UIButton *)sender
-{
-    CityView *cityView = [[CityView alloc] init];
-    cityView.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:cityView animated:YES];
-}
-
-- (IBAction)stewardFeeAction:(id)sender {
-//    if ([UserModel Instance].isLogin == NO) {
-//        [Tool noticeLogin:self.view andDelegate:self andTitle:@""];
-//        return;
-//    }
-//    StewardFeeFrameView *feeFrame = [[StewardFeeFrameView alloc] init];
-//    feeFrame.hidesBottomBarWhenPushed = YES;
-//    [self.navigationController pushViewController:feeFrame animated:YES];
-    
-    StewardPageView *stewardPage = [[StewardPageView alloc] init];
-    [self.navigationController pushViewController:stewardPage animated:YES];
-}
-
-- (IBAction)clickSubtle:(UIButton *)sender
-{
-    SubtleView *subtleView = [[SubtleView alloc] init];
-    subtleView.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:subtleView animated:YES];
-}
-
-- (IBAction)zhiyuanzheAction:(UIButton *)sender
-{
-    VolunteerView *voluView = [[VolunteerView alloc] init];
-    voluView.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:voluView animated:YES];
-}
-
-- (IBAction)BusniessAction:(id)sender {
-//    if ([UserModel Instance].isLogin == NO) {
-//        [Tool noticeLogin:self.view andDelegate:self andTitle:@""];
-//        return;
-//    }
-//    RepairsFrameView *repairsFrame = [[RepairsFrameView alloc] init];
-//    repairsFrame.hidesBottomBarWhenPushed = YES;
-//    [self.navigationController pushViewController:repairsFrame animated:YES];
-    CommunityView *communityView = [[CommunityView alloc] init];
-    [self.navigationController pushViewController:communityView animated:YES];
-}
-
-- (IBAction)clickBusiness:(UIButton *)sender
-{
-    BusinessView *businessView = [[BusinessView alloc] init];
-    businessView.hidesBottomBarWhenPushed = YES;
-    
-    [self.navigationController pushViewController:businessView animated:YES];
-}
-
-- (IBAction)noticeAction:(id)sender {
+- (IBAction)wytzAction:(id)sender {
     NoticeFrameView *noticeFrame = [[NoticeFrameView alloc] init];
     noticeFrame.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:noticeFrame animated:YES];
 }
 
-- (IBAction)newsAction:(id)sender
-{
-    CityView *cityView = [[CityView alloc] init];
-    cityView.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:cityView animated:YES];
+- (IBAction)wybxAction:(id)sender {
+    if ([UserModel Instance].isLogin == NO) {
+        [Tool noticeLogin:self.view andDelegate:self andTitle:@""];
+        return;
+    }
+    RepairsFrameView *repairsFrame = [[RepairsFrameView alloc] init];
+    repairsFrame.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:repairsFrame animated:YES];
 }
+
+- (IBAction)sqltAction:(id)sender {
+    ProjectCollectionView *bbsView = [[ProjectCollectionView alloc] init];
+    bbsView.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:bbsView animated:YES];
+}
+
+- (IBAction)sqbsAction:(id)sender {
+    if ([UserModel Instance].isLogin == NO)
+    {
+        [Tool noticeLogin:self.view andDelegate:self andTitle:@""];
+        return;
+    }
+    ArticleView *artView = [[ArticleView alloc] init];
+    artView.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:artView animated:YES];
+}
+
+- (IBAction)wyjfAction:(id)sender {
+    if ([UserModel Instance].isLogin == NO) {
+        [Tool noticeLogin:self.view andDelegate:self andTitle:@""];
+        return;
+    }
+    StewardFeeFrameView *feeFrame = [[StewardFeeFrameView alloc] init];
+    feeFrame.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:feeFrame animated:YES];
+}
+
+- (IBAction)kdsfAction:(id)sender {
+    if ([UserModel Instance].isLogin == NO) {
+        [Tool noticeLogin:self.view andDelegate:self andTitle:@""];
+        return;
+    }
+    ExpressView *expressView = [[ExpressView alloc] init];
+    expressView.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:expressView animated:YES];
+}
+
 
 - (IBAction)shareAction:(id)sender {
     Advertisement *adv = [advDatas objectAtIndex:advIndex];
@@ -323,11 +299,7 @@
     }
 }
 
-- (IBAction)clickBBS:(id)sender {
-    ProjectCollectionView *projectView = [[ProjectCollectionView alloc] init];
-    projectView.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:projectView animated:YES];
-}
+
 
 - (IBAction)advDetailAction:(id)sender {
     Advertisement *adv = (Advertisement *)[advDatas objectAtIndex:advIndex];

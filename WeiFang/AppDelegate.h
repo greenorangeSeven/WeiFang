@@ -26,10 +26,13 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate, BMKGeneralDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-//@property (strong, nonatomic) UITabBarController *tabBarController;
+@property (strong, nonatomic) UITabBarController *tabBarController;
 
 @property (strong, nonatomic) MainPageView *mainPage;
 @property (strong, nonatomic) StartView *startPage;
+@property (strong, nonatomic) StewardPageView *stewardPage;
+@property (strong, nonatomic) LifePageView *lifePage;
+@property (strong, nonatomic) CityPageView *cityPage;
 @property (nonatomic, assign) BOOL isFirst;
 
 @end

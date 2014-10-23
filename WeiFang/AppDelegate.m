@@ -12,7 +12,11 @@
 BMKMapManager* _mapManager;
 
 @implementation AppDelegate
+@synthesize tabBarController;
 @synthesize mainPage;
+@synthesize stewardPage;
+@synthesize lifePage;
+@synthesize cityPage;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -66,7 +70,7 @@ BMKMapManager* _mapManager;
     self.isFirst = [prefs boolForKey:@"kAppLaunched"];
     
     if (!self.isFirst) {
-//        [prefs setBool:YES forKey:@"kAppLaunched"];
+        [prefs setBool:YES forKey:@"kAppLaunched"];
         [prefs synchronize];
         //启动页
         self.startPage = [[StartView alloc] initWithNibName:@"StartView" bundle:nil];
@@ -75,9 +79,40 @@ BMKMapManager* _mapManager;
         [self.window makeKeyAndVisible];
     } else
     {
+        //首页
+        self.mainPage = [[MainPageView alloc] initWithNibName:@"MainPageView" bundle:nil];
+        mainPage.tabBarItem.image = [UIImage imageNamed:@"tab_main"];
+        mainPage.tabBarItem.title = @"智慧社区";
+        UINavigationController *mainPageNav = [[UINavigationController alloc] initWithRootViewController:self.mainPage];
+        //智慧物业
+        self.stewardPage = [[StewardPageView alloc] initWithNibName:@"StewardPageView" bundle:nil];
+        stewardPage.tabBarItem.image = [UIImage imageNamed:@"tab_steward"];
+        stewardPage.tabBarItem.title = @"智慧家居";
+        UINavigationController *stewardPageNav = [[UINavigationController alloc] initWithRootViewController:self.stewardPage];
+        //智慧生活
+        self.lifePage = [[LifePageView alloc] initWithNibName:@"LifePageView" bundle:nil];
+        lifePage.tabBarItem.image = [UIImage imageNamed:@"tab_life"];
+        lifePage.tabBarItem.title = @"智慧生活";
+        UINavigationController *lifePageNav = [[UINavigationController alloc] initWithRootViewController:self.lifePage];
+        //智慧城市
+        self.cityPage = [[CityPageView alloc] initWithNibName:@"CityPageView" bundle:nil];
+        cityPage.tabBarItem.image = [UIImage imageNamed:@"tab_nanning"];
+        cityPage.tabBarItem.title = @"智慧潍坊";
+        UINavigationController *cityPageNav = [[UINavigationController alloc] initWithRootViewController:self.cityPage];
+        
+        self.tabBarController = [[UITabBarController alloc] init];
+        self.tabBarController.viewControllers = [NSArray arrayWithObjects:
+                                                 mainPageNav,
+                                                 lifePageNav,
+                                                 stewardPageNav,
+                                                 cityPageNav,
+                                                 nil];
+        [[self.tabBarController tabBar] setSelectedImageTintColor:[Tool getColorForGreen]];
+        [[self.tabBarController tabBar] setBackgroundImage:[UIImage imageNamed:@"tabbar_bg"]];
+        
         
         self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-        self.window.rootViewController = mainPageNav;
+        self.window.rootViewController = tabBarController;
         [self.window makeKeyAndVisible];
     }
     

@@ -99,15 +99,46 @@
 
 - (IBAction)enterAction:(id)sender
 {
+    //首页
     MainPageView *mainPage = [[MainPageView alloc] initWithNibName:@"MainPageView" bundle:nil];
+    mainPage.tabBarItem.image = [UIImage imageNamed:@"tab_main"];
+    mainPage.tabBarItem.title = @"智慧物业";
     UINavigationController *mainPageNav = [[UINavigationController alloc] initWithRootViewController:mainPage];
+    //智慧物业
+    StewardPageView *stewardPage = [[StewardPageView alloc] initWithNibName:@"StewardPageView" bundle:nil];
+    stewardPage.tabBarItem.image = [UIImage imageNamed:@"tab_steward"];
+    stewardPage.tabBarItem.title = @"智慧家居";
+    UINavigationController *stewardPageNav = [[UINavigationController alloc] initWithRootViewController:stewardPage];
+    //智慧生活
+    LifePageView *lifePage = [[LifePageView alloc] initWithNibName:@"LifePageView" bundle:nil];
+    lifePage.tabBarItem.image = [UIImage imageNamed:@"tab_life"];
+    lifePage.tabBarItem.title = @"智慧生活";
+    UINavigationController *lifePageNav = [[UINavigationController alloc] initWithRootViewController:lifePage];
+    //智慧城市
+    CityPageView *cityPage = [[CityPageView alloc] initWithNibName:@"CityPageView" bundle:nil];
+    cityPage.tabBarItem.image = [UIImage imageNamed:@"tab_nanning"];
+    cityPage.tabBarItem.title = @"智慧潍坊";
+    UINavigationController *cityPageNav = [[UINavigationController alloc] initWithRootViewController:cityPage];
+    
+    UITabBarController *tabBarController = [[UITabBarController alloc] init];
+    tabBarController.viewControllers = [NSArray arrayWithObjects:
+                                             mainPageNav,
+                                             lifePageNav,
+                                             stewardPageNav,
+                                             cityPageNav,
+                                             nil];
+    [[tabBarController tabBar] setSelectedImageTintColor:[Tool getColorForGreen]];
+    [[tabBarController tabBar] setBackgroundImage:[UIImage imageNamed:@"tabbar_bg"]];
+    
+    
+    
     self.intoButton.hidden = YES;
     AppDelegate *appdele = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     [UIView transitionWithView:appdele.window
                       duration:0.5
                        options:UIViewAnimationOptionTransitionCrossDissolve
                     animations:^{
-                        appdele.window.rootViewController = mainPageNav;
+                        appdele.window.rootViewController = tabBarController;
                     }
                     completion:nil];
 }

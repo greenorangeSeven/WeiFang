@@ -238,7 +238,7 @@
 - (void)foucusImageFrame:(SGFocusImageFrame *)imageFrame didSelectItem:(SGFocusImageItem *)item
 {
     if (self.tjCatId != nil && [self.tjCatId length] > 0) {
-        Goods *good = (Goods *)[goods objectAtIndex:couponIndex];
+        Goods *good = (Goods *)[coupons objectAtIndex:couponIndex];
         if (good) {
             GoodsDetailView *goodsDetail = [[GoodsDetailView alloc] init];
             goodsDetail.good = good;

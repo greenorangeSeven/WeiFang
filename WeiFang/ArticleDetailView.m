@@ -20,7 +20,7 @@
     if (self) {
         UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 100, 44)];
         titleLabel.font = [UIFont boldSystemFontOfSize:18];
-        titleLabel.text = @"通知详情";
+        titleLabel.text = @"详情";
         titleLabel.backgroundColor = [UIColor clearColor];
         titleLabel.textColor = [Tool getColorForGreen];
         titleLabel.textAlignment = UITextAlignmentCenter;
@@ -32,11 +32,11 @@
         UIBarButtonItem *btnBack = [[UIBarButtonItem alloc]initWithCustomView:lBtn];
         self.navigationItem.leftBarButtonItem = btnBack;
         
-        UIButton *rBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 52, 27)];
-        [rBtn addTarget:self action:@selector(shareAction:) forControlEvents:UIControlEventTouchUpInside];
-        [rBtn setImage:[UIImage imageNamed:@"head_share"] forState:UIControlStateNormal];
-        UIBarButtonItem *btnSearch = [[UIBarButtonItem alloc]initWithCustomView:rBtn];
-        self.navigationItem.rightBarButtonItem = btnSearch;
+//        UIButton *rBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 52, 27)];
+//        [rBtn addTarget:self action:@selector(shareAction:) forControlEvents:UIControlEventTouchUpInside];
+//        [rBtn setImage:[UIImage imageNamed:@"head_share"] forState:UIControlStateNormal];
+//        UIBarButtonItem *btnSearch = [[UIBarButtonItem alloc]initWithCustomView:rBtn];
+//        self.navigationItem.rightBarButtonItem = btnSearch;
     }
     return self;
 }

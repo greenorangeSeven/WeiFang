@@ -103,7 +103,7 @@
 
 + (UIColor *)getColorForGreen
 {
-    return [UIColor colorWithRed:18.0/255 green:144.0/255 blue:2.0/255 alpha:1.0];
+    return [UIColor colorWithRed:0.0/255 green:110.0/255 blue:166.0/255 alpha:1.0];
 }
 
 + (void)clearWebViewBackground:(UIWebView *)webView
