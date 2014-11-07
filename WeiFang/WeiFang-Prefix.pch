@@ -88,6 +88,10 @@
 #define api_replybbs @"/reply_subject"
 #define api_addbbs @"/add_bbs_subject"
 #define api_delbbs @"/del_bbs_subject"
+#define api_getdesignlist @"/get_design_list"
+#define api_getdesigninfo @"/get_design_info"
+#define api_jccate @"/get_jc_cate"
+#define api_jclist @"/get_jc_list"
 
 //商品下单地址
 #define api_send_order @"/send_order"

@@ -167,54 +167,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)stewardFeeAction:(id)sender {
-    if ([UserModel Instance].isLogin == NO) {
-        [Tool noticeLogin:self.view andDelegate:self andTitle:@""];
-        return;
-    }
-    StewardFeeFrameView *feeFrame = [[StewardFeeFrameView alloc] init];
-    feeFrame.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:feeFrame animated:YES];
-}
 
-- (IBAction)repairsAction:(id)sender {
-    if ([UserModel Instance].isLogin == NO) {
-        [Tool noticeLogin:self.view andDelegate:self andTitle:@""];
-        return;
-    }
-    RepairsFrameView *repairsFrame = [[RepairsFrameView alloc] init];
-    repairsFrame.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:repairsFrame animated:YES];
-}
-
-- (IBAction)noticeAction:(id)sender {
-    NoticeFrameView *noticeFrame = [[NoticeFrameView alloc] init];
-    noticeFrame.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:noticeFrame animated:YES];
-}
-
-- (IBAction)expressAction:(id)sender {
-    if ([UserModel Instance].isLogin == NO) {
-        [Tool noticeLogin:self.view andDelegate:self andTitle:@""];
-        return;
-    }
-    ExpressView *expressView = [[ExpressView alloc] init];
-    expressView.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:expressView animated:YES];
-}
-
-- (IBAction)arttileAction:(id)sender
-{
-    
-    if ([UserModel Instance].isLogin == NO)
-    {
-        [Tool noticeLogin:self.view andDelegate:self andTitle:@""];
-        return;
-    }
-    ArticleView *artView = [[ArticleView alloc] init];
-    artView.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:artView animated:YES];
-}
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
@@ -237,5 +190,62 @@
     [self.navigationController pushViewController:commView animated:YES];
 
 }
+
+- (IBAction)myDesignAction:(id)sender {
+    MyDesignView *designView = [[MyDesignView alloc] init];
+    designView.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:designView animated:YES];
+    
+}
+
+- (IBAction)jdAction:(id)sender {
+    MaterialsView *materialView = [[MaterialsView alloc] init];
+    materialView.typeId = @"4";
+    materialView.typeName = @"家电";
+    materialView.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:materialView animated:YES];
+}
+
+- (IBAction)jzgyAction:(id)sender {
+    MaterialsView *materialView = [[MaterialsView alloc] init];
+    materialView.typeId = @"16";
+    materialView.typeName = @"家装工艺";
+    materialView.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:materialView animated:YES];
+}
+
+- (IBAction)yqAction:(id)sender {
+    MaterialsView *materialView = [[MaterialsView alloc] init];
+    materialView.typeId = @"11";
+    materialView.typeName = @"油漆";
+    materialView.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:materialView animated:YES];
+}
+
+- (IBAction)jcAction:(id)sender {
+    MaterialsView *materialView = [[MaterialsView alloc] init];
+    materialView.typeId = @"14";
+    materialView.typeName = @"建材";
+    materialView.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:materialView animated:YES];
+}
+
+- (IBAction)jjAction:(id)sender {
+    MaterialsView *materialView = [[MaterialsView alloc] init];
+    materialView.typeId = @"12";
+    materialView.typeName = @"家居";
+    materialView.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:materialView animated:YES];
+}
+
+- (IBAction)rzAction:(id)sender {
+    MaterialsView *materialView = [[MaterialsView alloc] init];
+    materialView.typeId = @"10";
+    materialView.typeName = @"软装";
+    materialView.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:materialView animated:YES];
+}
+
+
 
 @end

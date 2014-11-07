@@ -285,6 +285,39 @@
     [self.navigationController pushViewController:expressView animated:YES];
 }
 
+- (IBAction)fwznAction:(id)sender {
+    CommunityView *communityView = [[CommunityView alloc] init];
+    communityView.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:communityView animated:YES];
+}
+
+- (IBAction)wyfcAction:(id)sender {
+    StewardNewsView *cityView = [[StewardNewsView alloc] init];
+    cityView.typeStr = @"4";
+    cityView.typeNameStr = @"物业风采";
+    cityView.advId = @"11";
+    cityView.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:cityView animated:YES];
+}
+
+- (IBAction)yzxzAction:(id)sender {
+    StewardNewsView *cityView = [[StewardNewsView alloc] init];
+    cityView.typeStr = @"5";
+    cityView.typeNameStr = @"业主须知";
+    cityView.advId = @"11";
+    cityView.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:cityView animated:YES];
+}
+
+- (IBAction)glgyAction:(id)sender {
+    StewardNewsView *cityView = [[StewardNewsView alloc] init];
+    cityView.typeStr = @"6";
+    cityView.typeNameStr = @"管理规约";
+    cityView.advId = @"11";
+    cityView.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:cityView animated:YES];
+}
+
 
 - (IBAction)shareAction:(id)sender {
     Advertisement *adv = [advDatas objectAtIndex:advIndex];

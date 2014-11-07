@@ -15,6 +15,8 @@
 #import "SGFocusImageItem.h"
 #import "ArticleView.h"
 #import "ADVDetailView.h"
+#import "MyDesignView.h"
+#import "MaterialsView.h"
 
 @interface StewardPageView : UIViewController<SGFocusImageFrameDelegate, UIActionSheetDelegate>
 {
@@ -29,12 +31,13 @@
 @property (strong, nonatomic) IBOutlet UILabel *telBg;
 @property (weak, nonatomic) IBOutlet UIImageView *advIv;
 
-- (IBAction)stewardFeeAction:(id)sender;
-- (IBAction)repairsAction:(id)sender;
-- (IBAction)noticeAction:(id)sender;
-- (IBAction)expressAction:(id)sender;
-- (IBAction)arttileAction:(id)sender;
 - (IBAction)telAction:(id)sender;
-- (IBAction)serviceAction:(id)sender;
+- (IBAction)myDesignAction:(id)sender;
+- (IBAction)jdAction:(id)sender;
+- (IBAction)jzgyAction:(id)sender;
+- (IBAction)yqAction:(id)sender;
+- (IBAction)jcAction:(id)sender;
+- (IBAction)jjAction:(id)sender;
+- (IBAction)rzAction:(id)sender;
 
 @end

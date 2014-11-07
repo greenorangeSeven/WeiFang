@@ -7,6 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		140707D21A08742D0046900E /* CityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 140707D01A08742D0046900E /* CityView.m */; };
+		140707D31A08742D0046900E /* CityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 140707D11A08742D0046900E /* CityView.xib */; };
+		140707D51A087EF00046900E /* city_zwdh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 140707D41A087EF00046900E /* city_zwdh@2x.png */; };
+		140707D91A0881A40046900E /* StewardNewsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 140707D71A0881A40046900E /* StewardNewsView.m */; };
+		140707DA1A0881A40046900E /* StewardNewsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 140707D81A0881A40046900E /* StewardNewsView.xib */; };
+		142E2CDE1A0A569E009553AE /* MyDesignView.m in Sources */ = {isa = PBXBuildFile; fileRef = 142E2CDC1A0A569E009553AE /* MyDesignView.m */; };
+		142E2CDF1A0A569E009553AE /* MyDesignView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 142E2CDD1A0A569E009553AE /* MyDesignView.xib */; };
+		142E2CE31A0A56FC009553AE /* MyDesignCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 142E2CE11A0A56FC009553AE /* MyDesignCell.m */; };
+		142E2CE41A0A56FC009553AE /* MyDesignCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 142E2CE21A0A56FC009553AE /* MyDesignCell.xib */; };
+		142E2CE71A0A645E009553AE /* Design.m in Sources */ = {isa = PBXBuildFile; fileRef = 142E2CE61A0A645E009553AE /* Design.m */; };
+		142E2CEB1A0A6834009553AE /* MyDesignDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 142E2CE91A0A6834009553AE /* MyDesignDetailView.m */; };
+		142E2CEC1A0A6834009553AE /* MyDesignDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 142E2CEA1A0A6834009553AE /* MyDesignDetailView.xib */; };
+		142E2CF11A0A774F009553AE /* MaterialsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 142E2CEF1A0A774F009553AE /* MaterialsView.m */; };
+		142E2CF21A0A774F009553AE /* MaterialsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 142E2CF01A0A774F009553AE /* MaterialsView.xib */; };
+		1483654D1A0B000C0070DB87 /* MaterialsCate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1483654C1A0B000C0070DB87 /* MaterialsCate.m */; };
+		1483654F1A0B04530070DB87 /* cc_btypebg.png in Resources */ = {isa = PBXBuildFile; fileRef = 1483654E1A0B04530070DB87 /* cc_btypebg.png */; };
+		148365531A0B04E10070DB87 /* CCSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 148365521A0B04E10070DB87 /* CCSegmentedControl.m */; };
+		148365561A0B15760070DB87 /* MaterialsCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 148365551A0B15760070DB87 /* MaterialsCollectionCell.m */; };
+		148365581A0B159F0070DB87 /* MaterialsCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 148365571A0B159F0070DB87 /* MaterialsCollectionCell.xib */; };
 		14A90D9519F09E93001C29EE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A90D9419F09E93001C29EE /* Foundation.framework */; };
 		14A90D9719F09E93001C29EE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A90D9619F09E93001C29EE /* CoreGraphics.framework */; };
 		14A90D9919F09E93001C29EE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A90D9819F09E93001C29EE /* UIKit.framework */; };
@@ -318,8 +337,6 @@
 		14A9117519F0A1FB001C29EE /* CityPageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14A9114F19F0A1FB001C29EE /* CityPageView.xib */; };
 		14A9117619F0A1FB001C29EE /* VolunteerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A9115119F0A1FB001C29EE /* VolunteerView.m */; };
 		14A9117719F0A1FB001C29EE /* VolunteerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14A9115219F0A1FB001C29EE /* VolunteerView.xib */; };
-		14A9117819F0A1FB001C29EE /* CityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A9115419F0A1FB001C29EE /* CityView.m */; };
-		14A9117919F0A1FB001C29EE /* CityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14A9115519F0A1FB001C29EE /* CityView.xib */; };
 		14A9117A19F0A1FB001C29EE /* LawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A9115719F0A1FB001C29EE /* LawView.m */; };
 		14A9117B19F0A1FB001C29EE /* LawView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14A9115819F0A1FB001C29EE /* LawView.xib */; };
 		14A9117C19F0A1FB001C29EE /* CityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A9115A19F0A1FB001C29EE /* CityCell.m */; };
@@ -614,6 +631,35 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		140707CF1A08742D0046900E /* CityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityView.h; sourceTree = "<group>"; };
+		140707D01A08742D0046900E /* CityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityView.m; sourceTree = "<group>"; };
+		140707D11A08742D0046900E /* CityView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CityView.xib; sourceTree = "<group>"; };
+		140707D41A087EF00046900E /* city_zwdh@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "city_zwdh@2x.png"; sourceTree = "<group>"; };
+		140707D61A0881A40046900E /* StewardNewsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StewardNewsView.h; sourceTree = "<group>"; };
+		140707D71A0881A40046900E /* StewardNewsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StewardNewsView.m; sourceTree = "<group>"; };
+		140707D81A0881A40046900E /* StewardNewsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StewardNewsView.xib; sourceTree = "<group>"; };
+		142E2CDB1A0A569E009553AE /* MyDesignView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDesignView.h; sourceTree = "<group>"; };
+		142E2CDC1A0A569E009553AE /* MyDesignView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDesignView.m; sourceTree = "<group>"; };
+		142E2CDD1A0A569E009553AE /* MyDesignView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyDesignView.xib; sourceTree = "<group>"; };
+		142E2CE01A0A56FC009553AE /* MyDesignCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDesignCell.h; sourceTree = "<group>"; };
+		142E2CE11A0A56FC009553AE /* MyDesignCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDesignCell.m; sourceTree = "<group>"; };
+		142E2CE21A0A56FC009553AE /* MyDesignCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyDesignCell.xib; sourceTree = "<group>"; };
+		142E2CE51A0A645E009553AE /* Design.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Design.h; sourceTree = "<group>"; };
+		142E2CE61A0A645E009553AE /* Design.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Design.m; sourceTree = "<group>"; };
+		142E2CE81A0A6834009553AE /* MyDesignDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDesignDetailView.h; sourceTree = "<group>"; };
+		142E2CE91A0A6834009553AE /* MyDesignDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDesignDetailView.m; sourceTree = "<group>"; };
+		142E2CEA1A0A6834009553AE /* MyDesignDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyDesignDetailView.xib; sourceTree = "<group>"; };
+		142E2CEE1A0A774F009553AE /* MaterialsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialsView.h; sourceTree = "<group>"; };
+		142E2CEF1A0A774F009553AE /* MaterialsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaterialsView.m; sourceTree = "<group>"; };
+		142E2CF01A0A774F009553AE /* MaterialsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MaterialsView.xib; sourceTree = "<group>"; };
+		1483654B1A0B000C0070DB87 /* MaterialsCate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialsCate.h; sourceTree = "<group>"; };
+		1483654C1A0B000C0070DB87 /* MaterialsCate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaterialsCate.m; sourceTree = "<group>"; };
+		1483654E1A0B04530070DB87 /* cc_btypebg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cc_btypebg.png; sourceTree = "<group>"; };
+		148365511A0B04E10070DB87 /* CCSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSegmentedControl.h; sourceTree = "<group>"; };
+		148365521A0B04E10070DB87 /* CCSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCSegmentedControl.m; sourceTree = "<group>"; };
+		148365541A0B15760070DB87 /* MaterialsCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialsCollectionCell.h; sourceTree = "<group>"; };
+		148365551A0B15760070DB87 /* MaterialsCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaterialsCollectionCell.m; sourceTree = "<group>"; };
+		148365571A0B159F0070DB87 /* MaterialsCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MaterialsCollectionCell.xib; sourceTree = "<group>"; };
 		14A90D9119F09E93001C29EE /* WeiFang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeiFang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14A90D9419F09E93001C29EE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		14A90D9619F09E93001C29EE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -1190,9 +1236,6 @@
 		14A9115019F0A1FB001C29EE /* VolunteerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VolunteerView.h; sourceTree = "<group>"; };
 		14A9115119F0A1FB001C29EE /* VolunteerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VolunteerView.m; sourceTree = "<group>"; };
 		14A9115219F0A1FB001C29EE /* VolunteerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VolunteerView.xib; sourceTree = "<group>"; };
-		14A9115319F0A1FB001C29EE /* CityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityView.h; sourceTree = "<group>"; };
-		14A9115419F0A1FB001C29EE /* CityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityView.m; sourceTree = "<group>"; };
-		14A9115519F0A1FB001C29EE /* CityView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CityView.xib; sourceTree = "<group>"; };
 		14A9115619F0A1FB001C29EE /* LawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LawView.h; sourceTree = "<group>"; };
 		14A9115719F0A1FB001C29EE /* LawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LawView.m; sourceTree = "<group>"; };
 		14A9115819F0A1FB001C29EE /* LawView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LawView.xib; sourceTree = "<group>"; };
@@ -1606,6 +1649,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		142E2CDA1A0A5668009553AE /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				142E2CDB1A0A569E009553AE /* MyDesignView.h */,
+				142E2CDC1A0A569E009553AE /* MyDesignView.m */,
+				142E2CDD1A0A569E009553AE /* MyDesignView.xib */,
+				142E2CE01A0A56FC009553AE /* MyDesignCell.h */,
+				142E2CE11A0A56FC009553AE /* MyDesignCell.m */,
+				142E2CE21A0A56FC009553AE /* MyDesignCell.xib */,
+				142E2CE81A0A6834009553AE /* MyDesignDetailView.h */,
+				142E2CE91A0A6834009553AE /* MyDesignDetailView.m */,
+				142E2CEA1A0A6834009553AE /* MyDesignDetailView.xib */,
+				142E2CEE1A0A774F009553AE /* MaterialsView.h */,
+				142E2CEF1A0A774F009553AE /* MaterialsView.m */,
+				142E2CF01A0A774F009553AE /* MaterialsView.xib */,
+				148365541A0B15760070DB87 /* MaterialsCollectionCell.h */,
+				148365551A0B15760070DB87 /* MaterialsCollectionCell.m */,
+				148365571A0B159F0070DB87 /* MaterialsCollectionCell.xib */,
+			);
+			name = Design;
+			sourceTree = "<group>";
+		};
+		148365501A0B04E10070DB87 /* CCSegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				148365511A0B04E10070DB87 /* CCSegmentedControl.h */,
+				148365521A0B04E10070DB87 /* CCSegmentedControl.m */,
+			);
+			path = CCSegmentedControl;
+			sourceTree = "<group>";
+		};
 		14A90D8819F09E93001C29EE = {
 			isa = PBXGroup;
 			children = (
@@ -1664,6 +1738,7 @@
 				14A90DA319F09E93001C29EE /* AppDelegate.h */,
 				14A90DA419F09E93001C29EE /* AppDelegate.m */,
 				14A90DA619F09E93001C29EE /* Images.xcassets */,
+				142E2CDA1A0A5668009553AE /* Design */,
 				14A9100019F0A095001C29EE /* MainPage */,
 				14A9100119F0A0A0001C29EE /* StewardPage */,
 				14A9100219F0A0AF001C29EE /* LifePage */,
@@ -1709,6 +1784,7 @@
 		14A90DC319F09EEE001C29EE /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				148365501A0B04E10070DB87 /* CCSegmentedControl */,
 				14A90DC419F09EEE001C29EE /* AES */,
 				14A90DCD19F09EEE001C29EE /* AFNetwork */,
 				14A90DE519F09EEE001C29EE /* alipay */,
@@ -2488,6 +2564,9 @@
 				14A9104719F0A1E0001C29EE /* NewsDetailView.h */,
 				14A9104819F0A1E0001C29EE /* NewsDetailView.m */,
 				14A9104919F0A1E0001C29EE /* NewsDetailView.xib */,
+				140707D61A0881A40046900E /* StewardNewsView.h */,
+				140707D71A0881A40046900E /* StewardNewsView.m */,
+				140707D81A0881A40046900E /* StewardNewsView.xib */,
 				14A9104A19F0A1E0001C29EE /* ExpressView.h */,
 				14A9104B19F0A1E0001C29EE /* ExpressView.m */,
 				14A9104C19F0A1E0001C29EE /* ExpressView.xib */,
@@ -2640,12 +2719,12 @@
 				14A9114D19F0A1FB001C29EE /* CityPageView.h */,
 				14A9114E19F0A1FB001C29EE /* CityPageView.m */,
 				14A9114F19F0A1FB001C29EE /* CityPageView.xib */,
+				140707CF1A08742D0046900E /* CityView.h */,
+				140707D01A08742D0046900E /* CityView.m */,
+				140707D11A08742D0046900E /* CityView.xib */,
 				14A9115019F0A1FB001C29EE /* VolunteerView.h */,
 				14A9115119F0A1FB001C29EE /* VolunteerView.m */,
 				14A9115219F0A1FB001C29EE /* VolunteerView.xib */,
-				14A9115319F0A1FB001C29EE /* CityView.h */,
-				14A9115419F0A1FB001C29EE /* CityView.m */,
-				14A9115519F0A1FB001C29EE /* CityView.xib */,
 				14A9115619F0A1FB001C29EE /* LawView.h */,
 				14A9115719F0A1FB001C29EE /* LawView.m */,
 				14A9115819F0A1FB001C29EE /* LawView.xib */,
@@ -2720,6 +2799,8 @@
 		14A9100519F0A0ED001C29EE /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				1483654E1A0B04530070DB87 /* cc_btypebg.png */,
+				140707D41A087EF00046900E /* city_zwdh@2x.png */,
 				14B47F0319F92D5C00588CB3 /* city_flyz@2x.png */,
 				14B47F0419F92D5C00588CB3 /* city_lyfw@2x.png */,
 				14A911C019F0A21F001C29EE /* v引导_3@2x.png */,
@@ -2990,6 +3071,10 @@
 				14A9137F19F0A22F001C29EE /* BBSReplyModel.m */,
 				14A9138019F0A22F001C29EE /* CommServiceInfo.h */,
 				14A9138119F0A22F001C29EE /* CommServiceInfo.m */,
+				142E2CE51A0A645E009553AE /* Design.h */,
+				142E2CE61A0A645E009553AE /* Design.m */,
+				1483654B1A0B000C0070DB87 /* MaterialsCate.h */,
+				1483654C1A0B000C0070DB87 /* MaterialsCate.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -3142,6 +3227,7 @@
 				14A9109319F0A1E0001C29EE /* MySendExpressView.xib in Resources */,
 				14A9109D19F0A1E0001C29EE /* ArticleView.xib in Resources */,
 				14A9129E19F0A21F001C29EE /* loadingpic3@2x.png in Resources */,
+				1483654F1A0B04530070DB87 /* cc_btypebg.png in Resources */,
 				14A9131B19F0A21F001C29EE /* userface.png in Resources */,
 				14A9131119F0A21F001C29EE /* recharge_bg@2x.png in Resources */,
 				14A912DF19F0A21F001C29EE /* subtle_hot@2x.png in Resources */,
@@ -3168,9 +3254,11 @@
 				14A9130519F0A21F001C29EE /* detail_temp.png in Resources */,
 				14A9114A19F0A1ED001C29EE /* BBSReplyView.xib in Resources */,
 				14A9130E19F0A21F001C29EE /* online_yidong@2x.png in Resources */,
+				142E2CE41A0A56FC009553AE /* MyDesignCell.xib in Resources */,
 				14A9113019F0A1ED001C29EE /* StoreMapPointView.xib in Resources */,
 				14A912F119F0A21F001C29EE /* wuye_jiaofei@2x.png in Resources */,
 				14A912BE19F0A21F001C29EE /* conv_order_phone@2x.png in Resources */,
+				142E2CEC1A0A6834009553AE /* MyDesignDetailView.xib in Resources */,
 				14A9109719F0A1E0001C29EE /* MyInBoxView.xib in Resources */,
 				14A9101419F0A1B3001C29EE /* MainPageView.xib in Resources */,
 				14A912A319F0A21F001C29EE /* nopic1@2x.png in Resources */,
@@ -3201,6 +3289,7 @@
 				14A90F8D19F09EEF001C29EE /* IQKeyboardManager.bundle in Resources */,
 				14A9131D19F0A21F001C29EE /* securitycode@2x.png in Resources */,
 				14A912CD19F0A21F001C29EE /* lm_muyin@2x.png in Resources */,
+				142E2CDF1A0A569E009553AE /* MyDesignView.xib in Resources */,
 				14A912A219F0A21F001C29EE /* nopic2@2x.png in Resources */,
 				14A9112619F0A1ED001C29EE /* BusinessView.xib in Resources */,
 				14A9128219F0A21F001C29EE /* wuye_service@2x.png in Resources */,
@@ -3221,6 +3310,7 @@
 				14A9108919F0A1E0001C29EE /* NoticeFrameView.xib in Resources */,
 				14A9101219F0A1B3001C29EE /* StartView.xib in Resources */,
 				14A912E819F0A21F001C29EE /* onlineservice@2x.png in Resources */,
+				148365581A0B159F0070DB87 /* MaterialsCollectionCell.xib in Resources */,
 				14A912FE19F0A21F001C29EE /* payfeequery@2x.png in Resources */,
 				14A9107519F0A1E0001C29EE /* ParkFeeView.xib in Resources */,
 				14A912DA19F0A21F001C29EE /* business_detail_temp@2x.png in Resources */,
@@ -3231,7 +3321,6 @@
 				14A912F619F0A21F001C29EE /* navi_setting.png in Resources */,
 				14A90FA019F09EEF001C29EE /* README.md in Resources */,
 				14A9130719F0A21F001C29EE /* business_map.png in Resources */,
-				14A9117919F0A1FB001C29EE /* CityView.xib in Resources */,
 				14A9130119F0A21F001C29EE /* goods_btn_bg@2x.png in Resources */,
 				14A9132419F0A220001C29EE /* setting_parkfee@2x.png in Resources */,
 				14A9132F19F0A220001C29EE /* stewardtop@2x.png in Resources */,
@@ -3338,6 +3427,7 @@
 				14A9133919F0A220001C29EE /* tab_my@2x.png in Resources */,
 				14A9108F19F0A1E0001C29EE /* NewsDetailView.xib in Resources */,
 				14A9129419F0A21F001C29EE /* activity_btn_o@2x.png in Resources */,
+				140707DA1A0881A40046900E /* StewardNewsView.xib in Resources */,
 				14A912A519F0A21F001C29EE /* 37x-Failure@2x.png in Resources */,
 				14A9111C19F0A1ED001C29EE /* CommunityDetailView.xib in Resources */,
 				14A9131519F0A21F001C29EE /* arealine.png in Resources */,
@@ -3353,6 +3443,7 @@
 				14A9131919F0A21F001C29EE /* saveinfobtn@2x.png in Resources */,
 				14A9114419F0A1ED001C29EE /* ProjectCollectionCell.xib in Resources */,
 				14A9132919F0A220001C29EE /* setting_logout@2x.png in Resources */,
+				140707D31A08742D0046900E /* CityView.xib in Resources */,
 				14A912CB19F0A21F001C29EE /* lm_house@2x.png in Resources */,
 				14A9127F19F0A21F001C29EE /* v引导_3@2x.png in Resources */,
 				14A912A919F0A21F001C29EE /* savebtnbg@2x.png in Resources */,
@@ -3390,6 +3481,7 @@
 				14A910A319F0A1E0001C29EE /* CommunityServiceView.xib in Resources */,
 				14A912A419F0A21F001C29EE /* conv_order_map@2x.png in Resources */,
 				14A9128C19F0A21F001C29EE /* mainxwnew@2x.png in Resources */,
+				142E2CF21A0A774F009553AE /* MaterialsView.xib in Resources */,
 				14A9113819F0A1ED001C29EE /* CouponDetailView.xib in Resources */,
 				14A9107919F0A1E0001C29EE /* FeeHistoryCell.xib in Resources */,
 				14A9132819F0A220001C29EE /* setting_push@2x.png in Resources */,
@@ -3421,6 +3513,7 @@
 				14A912A819F0A21F001C29EE /* 37x-Checkmark@2x.png in Resources */,
 				14A912F219F0A21F001C29EE /* wuye_baoxiu@2x.png in Resources */,
 				14A9129519F0A21F001C29EE /* activity_btn_t@2x.png in Resources */,
+				140707D51A087EF00046900E /* city_zwdh@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3454,6 +3547,7 @@
 				14A90F9E19F09EEF001C29EE /* PSTGridLayoutSection.m in Sources */,
 				14A913A019F0A22F001C29EE /* CommService.m in Sources */,
 				14A9114119F0A1ED001C29EE /* ProjectCollectionView.m in Sources */,
+				142E2CF11A0A774F009553AE /* MaterialsView.m in Sources */,
 				14A90F7A19F09EEF001C29EE /* EGOCache.m in Sources */,
 				14A910A219F0A1E0001C29EE /* CommunityServiceView.m in Sources */,
 				14A90FB719F09EEF001C29EE /* MWZoomingScrollView.m in Sources */,
@@ -3467,6 +3561,8 @@
 				14A9107419F0A1E0001C29EE /* ParkFeeView.m in Sources */,
 				14A9112519F0A1ED001C29EE /* BusinessView.m in Sources */,
 				14A90F6619F09EEF001C29EE /* ASIDataCompressor.m in Sources */,
+				142E2CE31A0A56FC009553AE /* MyDesignCell.m in Sources */,
+				142E2CDE1A0A569E009553AE /* MyDesignView.m in Sources */,
 				14A9107019F0A1E0001C29EE /* StewardFeeFrameView.m in Sources */,
 				14A90FB919F09EEF001C29EE /* NSString+STRegex.m in Sources */,
 				14A9109E19F0A1E0001C29EE /* ArticleCell.m in Sources */,
@@ -3494,6 +3590,7 @@
 				14A90F5E19F09EEF001C29EE /* SBJsonParser.m in Sources */,
 				14A9139619F0A22F001C29EE /* OrdersNum.m in Sources */,
 				14A90F8F19F09EEF001C29EE /* KxMenu.m in Sources */,
+				140707D91A0881A40046900E /* StewardNewsView.m in Sources */,
 				14A9109219F0A1E0001C29EE /* MySendExpressView.m in Sources */,
 				14A9108C19F0A1E0001C29EE /* NoticeTableCell.m in Sources */,
 				14A90FD319F09EEF001C29EE /* StrikeThroughLabel.m in Sources */,
@@ -3519,6 +3616,7 @@
 				14A90F4619F09EEF001C29EE /* NSData+Base64.m in Sources */,
 				14A9109019F0A1E0001C29EE /* ExpressView.m in Sources */,
 				14A9108819F0A1E0001C29EE /* NoticeFrameView.m in Sources */,
+				142E2CE71A0A645E009553AE /* Design.m in Sources */,
 				14A9139319F0A22F001C29EE /* OrderInfo.m in Sources */,
 				14A90F6E19F09EEF001C29EE /* Reachability.m in Sources */,
 				14A90F5219F09EEF001C29EE /* AFXMLRequestOperation.m in Sources */,
@@ -3556,7 +3654,6 @@
 				14A90F5919F09EEF001C29EE /* AlixPayResult.m in Sources */,
 				14A910A419F0A1E0001C29EE /* CommunityServiceCell.m in Sources */,
 				14A90F4A19F09EEF001C29EE /* AFHTTPRequestOperation.m in Sources */,
-				14A9117819F0A1FB001C29EE /* CityView.m in Sources */,
 				14A90FD519F09EEF001C29EE /* ZJSwitch.m in Sources */,
 				14A90F4519F09EEF001C29EE /* AESCrypt.m in Sources */,
 				14A9138619F0A22F001C29EE /* News.m in Sources */,
@@ -3567,6 +3664,7 @@
 				14A90F4B19F09EEF001C29EE /* AFImageRequestOperation.m in Sources */,
 				14A90F6419F09EEF001C29EE /* ASIWebPageRequest.m in Sources */,
 				14A9111719F0A1ED001C29EE /* CommunityView.m in Sources */,
+				148365531A0B04E10070DB87 /* CCSegmentedControl.m in Sources */,
 				14A90F5019F09EEF001C29EE /* AFPropertyListRequestOperation.m in Sources */,
 				14A9109A19F0A1E0001C29EE /* KuaiDi100View.m in Sources */,
 				14A9111119F0A1ED001C29EE /* ConvOrderView.m in Sources */,
@@ -3576,6 +3674,7 @@
 				14A90F7319F09EEF001C29EE /* Base64.m in Sources */,
 				14A911AE19F0A210001C29EE /* RegisterView.m in Sources */,
 				14A90F7E19F09EEF001C29EE /* EGOImageView.m in Sources */,
+				142E2CEB1A0A6834009553AE /* MyDesignDetailView.m in Sources */,
 				14A90F7C19F09EEF001C29EE /* EGOImageLoadConnection.m in Sources */,
 				14A90F8419F09EEF001C29EE /* NdUncaughtExceptionHandler.m in Sources */,
 				14A90FAD19F09EEF001C29EE /* UIImage+MultiFormat.m in Sources */,
@@ -3594,6 +3693,7 @@
 				14A9139419F0A22F001C29EE /* OrderBusiness.m in Sources */,
 				14A9139E19F0A22F001C29EE /* Citys.m in Sources */,
 				14A9112F19F0A1ED001C29EE /* StoreMapPointView.m in Sources */,
+				148365561A0B15760070DB87 /* MaterialsCollectionCell.m in Sources */,
 				14A90F9D19F09EEF001C29EE /* PSTGridLayoutRow.m in Sources */,
 				14A90FA419F09EEF001C29EE /* SDImageCache.m in Sources */,
 				14A90F4F19F09EEF001C29EE /* AFOSCClient.m in Sources */,
@@ -3624,9 +3724,11 @@
 				14A90FB619F09EEF001C29EE /* MWTapDetectingView.m in Sources */,
 				14A9113719F0A1ED001C29EE /* CouponDetailView.m in Sources */,
 				14A90F5519F09EEF001C29EE /* AlipayUtils.m in Sources */,
+				1483654D1A0B000C0070DB87 /* MaterialsCate.m in Sources */,
 				14A9113119F0A1ED001C29EE /* RouteSearchView.mm in Sources */,
 				14A90F4E19F09EEF001C29EE /* AFNetworkActivityIndicatorManager.m in Sources */,
 				14A90FA819F09EEF001C29EE /* SDWebImageDownloaderOperation.m in Sources */,
+				140707D21A08742D0046900E /* CityView.m in Sources */,
 				14A9118419F0A1FB001C29EE /* VolnDetailView.m in Sources */,
 				14A9118019F0A1FB001C29EE /* VolnView.m in Sources */,
 				14A90F8719F09EEF001C29EE /* FMDatabase.m in Sources */,
@@ -3768,9 +3870,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "0f1c143e-2ae2-4d62-9d6d-3d1a73a8e23c";
+				PROVISIONING_PROFILE = "de565265-a359-461a-baaf-d1c9fcd12c5a";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -3802,8 +3904,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				PROVISIONING_PROFILE = "0f1c143e-2ae2-4d62-9d6d-3d1a73a8e23c";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				PROVISIONING_PROFILE = "de565265-a359-461a-baaf-d1c9fcd12c5a";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -3837,6 +3939,7 @@
 					"${SDK_DIR}/usr/include/libxml2",
 				);
 				INFOPLIST_FILE = "WeiFang/WeiFang-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ThirdParty/alipay",
@@ -3848,7 +3951,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0f1c143e-2ae2-4d62-9d6d-3d1a73a8e23c";
+				PROVISIONING_PROFILE = "de565265-a359-461a-baaf-d1c9fcd12c5a";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -3881,6 +3984,7 @@
 					"${SDK_DIR}/usr/include/libxml2",
 				);
 				INFOPLIST_FILE = "WeiFang/WeiFang-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ThirdParty/alipay",
@@ -3892,7 +3996,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0f1c143e-2ae2-4d62-9d6d-3d1a73a8e23c";
+				PROVISIONING_PROFILE = "de565265-a359-461a-baaf-d1c9fcd12c5a";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -66,7 +66,7 @@
     if (self.catalog == 1) {
         self.webView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.frame.size.height);
         self.menuView.hidden = YES;
-        titleLabel.text = @"通知详情";
+        titleLabel.text = @"详情";
     }
     else if (self.catalog == 2)
     {

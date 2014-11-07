@@ -25,13 +25,11 @@
 @property (weak, nonatomic) IBOutlet UIImageView *advIv;
 
 - (IBAction)clickCity:(UIButton *)sender;
-
 - (IBAction)clickDongmeng:(UIButton *)sender;
-
 - (IBAction)clickZhiyuan:(UIButton *)sender;
-
-- (IBAction)clickHelp:(UIButton *)sender;
-
 - (IBAction)telAction:(id)sender;
+- (IBAction)flyzAction:(id)sender;
+- (IBAction)lyfwAction:(id)sender;
+- (IBAction)dztelAction:(id)sender;
 
 @end

@@ -52,6 +52,8 @@
 #import "BBSReplyModel.h"
 #import "CommService.h"
 #import "CommServiceInfo.h"
+#import "Design.h"
+#import "MaterialsCate.h"
 
 @interface Tool : NSObject
 
@@ -117,6 +119,8 @@
 
 + (NSString *)getOSVersion;
 
++ (int)getTextWidth:(NSString *)txt andUIFont:(int)fontSize;
+
 + (void)ToastNotification:(NSString *)text andView:(UIView *)view andLoading:(BOOL)isLoading andIsBottom:(BOOL)isBottom;
 
 + (void)CancelRequest:(ASIFormDataRequest *)request;
@@ -172,5 +176,8 @@
 + (CityInfo *)readJsonStrToCityInfo:(NSString *)str;
 + (NSMutableArray *)readJsonStrToBBSArray:(NSString *)str;
 + (NSMutableArray *)readJsonStrToCommercialReply:(NSString *)str;
++ (NSMutableArray *)readJsonStrToDesigns:(NSString *)str;
++ (Design *)readJsonStrToDesignInfo:(NSString *)str;
++ (NSMutableArray *)readJsonStrToJCCate:(NSString *)str;
 
 @end

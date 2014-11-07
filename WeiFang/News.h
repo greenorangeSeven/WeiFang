@@ -17,5 +17,6 @@
 @property (nonatomic, retain) NSString *summary;
 @property (nonatomic, retain) NSString *published;
 @property (nonatomic, retain) NSString *points;
+@property (retain,nonatomic) UIImage * imgData;
 
 @end

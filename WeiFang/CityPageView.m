@@ -168,6 +168,9 @@
 - (IBAction)clickCity:(UIButton *)sender
 {
     CityView *cityView = [[CityView alloc] init];
+    cityView.typeStr = @"3";
+    cityView.typeNameStr = @"风筝之城";
+    cityView.advId = @"6";
     cityView.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:cityView animated:YES];
 }
@@ -175,6 +178,9 @@
 - (IBAction)clickDongmeng:(UIButton *)sender
 {
     CityView *cityView = [[CityView alloc] init];
+    cityView.typeStr = @"2";
+    cityView.typeNameStr = @"魅力潍坊";
+    cityView.advId = @"9";
     cityView.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:cityView animated:YES];
 }
@@ -185,13 +191,6 @@
     volnView.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:volnView animated:YES];
 }
-- (IBAction)clickHelp:(UIButton *)sender
-{
-    
-    HelperView *helperView = [[HelperView alloc] init];
-    helperView.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:helperView animated:YES];
-}
 
 - (IBAction)telAction:(id)sender{
     NSURL *phoneUrl = [NSURL URLWithString:[NSString stringWithFormat:@"tel:%@", servicephone]];
@@ -199,6 +198,33 @@
         phoneCallWebView = [[UIWebView alloc] initWithFrame:CGRectZero];
     }
     [phoneCallWebView loadRequest:[NSURLRequest requestWithURL:phoneUrl]];
+}
+
+- (IBAction)flyzAction:(id)sender {
+    CityView *cityView = [[CityView alloc] init];
+    cityView.typeStr = @"5";
+    cityView.typeNameStr = @"法律援助";
+    cityView.advId = @"10";
+    cityView.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:cityView animated:YES];
+}
+
+- (IBAction)lyfwAction:(id)sender {
+    CityView *cityView = [[CityView alloc] init];
+    cityView.typeStr = @"6";
+    cityView.typeNameStr = @"旅游服务";
+    cityView.advId = @"7";
+    cityView.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:cityView animated:YES];
+}
+
+- (IBAction)dztelAction:(id)sender {
+    CityView *cityView = [[CityView alloc] init];
+    cityView.typeStr = @"7";
+    cityView.typeNameStr = @"政务电话";
+    cityView.advId = @"8";
+    cityView.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:cityView animated:YES];
 }
 
 @end

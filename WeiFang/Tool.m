@@ -255,6 +255,14 @@
     return fHeight;
 }
 
++ (int)getTextWidth:(NSString *)txt andUIFont:(int)fontSize
+{
+    UIFont *font = [UIFont fontWithName:@"Arial" size:fontSize];
+    CGSize size = CGSizeMake(320,2000);
+    CGSize labelsize = [txt sizeWithFont:font constrainedToSize:size lineBreakMode:UILineBreakModeWordWrap];
+    return labelsize.width;
+}
+
 + (int)getDaysCount:(int)year andMonth:(int)month andDay:(int)day
 {
     return year*365 + month * 31 + day;
@@ -1075,6 +1083,42 @@
         comm.contentHeight = [self getTextHeight:300 andUIFont:[UIFont fontWithName:@"Arial-BoldItalicMT" size:12] andText:comm.reply_content];
     }
     return replyArray;
+}
+
++ (NSMutableArray *)readJsonStrToDesigns:(NSString *)str
+{
+    NSData *data = [str dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *error;
+    NSArray *designJsonArray = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+    if ( designJsonArray == nil || [designJsonArray count] <= 0) {
+        return nil;
+    }
+    NSMutableArray *designArray = [RMMapper mutableArrayOfClass:[Design class] fromArrayOfDictionary:designJsonArray];
+    return designArray;
+}
+
++ (Design *)readJsonStrToDesignInfo:(NSString *)str
+{
+    NSData *data = [str dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *error;
+    NSDictionary *detailDic = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+    if ( detailDic == nil) {
+        return nil;
+    }
+    Design *info = [RMMapper objectWithClass:[Design class] fromDictionary:detailDic];
+    return info;
+}
+
++ (NSMutableArray *)readJsonStrToJCCate:(NSString *)str
+{
+    NSData *data = [str dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *error;
+    NSArray *cateJsonArray = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+    if ( cateJsonArray == nil || [cateJsonArray count] <= 0) {
+        return nil;
+    }
+    NSMutableArray *cateArray = [RMMapper mutableArrayOfClass:[MaterialsCate class] fromArrayOfDictionary:cateJsonArray];
+    return cateArray;
 }
 
 @end

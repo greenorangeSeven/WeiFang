@@ -20,6 +20,7 @@
 #import "CommunityView.h"
 #import "ProjectCollectionView.h"
 #import "VolunteerView.h"
+#import "StewardNewsView.h"
 
 
 @interface MainPageView : UIViewController<SGFocusImageFrameDelegate, UIActionSheetDelegate>
@@ -46,5 +47,9 @@
 - (IBAction)sqbsAction:(id)sender;
 - (IBAction)wyjfAction:(id)sender;
 - (IBAction)kdsfAction:(id)sender;
+- (IBAction)fwznAction:(id)sender;
+- (IBAction)wyfcAction:(id)sender;
+- (IBAction)yzxzAction:(id)sender;
+- (IBAction)glgyAction:(id)sender;
 
 @end
