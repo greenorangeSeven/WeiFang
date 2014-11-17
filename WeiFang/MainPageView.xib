@@ -243,6 +243,22 @@
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Us8-8h-CTO">
+                            <rect key="frame" x="230" y="503" width="58" height="58"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="jiaju_wjsj">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="myDesignAction:" destination="-1" eventType="touchUpInside" id="R1i-nx-pt3"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我家设计" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4P0-Wh-Vbc">
+                            <rect key="frame" x="229" y="562" width="59" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" red="0.91764705879999997" green="0.91764705879999997" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
                 </scrollView>
@@ -254,6 +270,7 @@
     </objects>
     <resources>
         <image name="detail.png" width="21" height="19"/>
+        <image name="jiaju_wjsj" width="56" height="57"/>
         <image name="main_btn_bg.png" width="602" height="485"/>
         <image name="main_fwzl" width="56" height="57"/>
         <image name="main_glgy" width="56" height="57"/>

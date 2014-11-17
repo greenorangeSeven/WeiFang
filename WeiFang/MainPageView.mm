@@ -344,6 +344,13 @@
     }
 }
 
+- (IBAction)myDesignAction:(id)sender {
+    MyDesignView *designView = [[MyDesignView alloc] init];
+    designView.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:designView animated:YES];
+    
+}
+
 - (IBAction)pointsAction:(id)sender {
     Advertisement *adv = (Advertisement *)[advDatas objectAtIndex:advIndex];
     if (adv) {

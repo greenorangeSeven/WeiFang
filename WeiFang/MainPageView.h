@@ -41,6 +41,7 @@
 - (IBAction)pointsAction:(id)sender;
 
 #pragma mark -按钮点击事件
+- (IBAction)myDesignAction:(id)sender;
 - (IBAction)wytzAction:(id)sender;
 - (IBAction)wybxAction:(id)sender;
 - (IBAction)sqltAction:(id)sender;
