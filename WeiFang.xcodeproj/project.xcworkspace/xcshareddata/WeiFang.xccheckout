@@ -10,29 +10,29 @@
 	<string>WeiFang</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>B094E37B-3640-40F3-81A6-E30F14737A54</key>
-		<string>ssh://github.com/greenorangeSeven/WeiFang.git</string>
+		<key>4588C2B9E0F4AA028A4ED85CA7A52611FACFC730</key>
+		<string>https://github.com/greenorangeSeven/WeiFang.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>WeiFang.xcodeproj/project.xcworkspace</string>
+	<string>WeiFang.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>B094E37B-3640-40F3-81A6-E30F14737A54</key>
+		<key>4588C2B9E0F4AA028A4ED85CA7A52611FACFC730</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://github.com/greenorangeSeven/WeiFang.git</string>
+	<string>https://github.com/greenorangeSeven/WeiFang.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>B094E37B-3640-40F3-81A6-E30F14737A54</string>
+	<string>4588C2B9E0F4AA028A4ED85CA7A52611FACFC730</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>B094E37B-3640-40F3-81A6-E30F14737A54</string>
+			<string>4588C2B9E0F4AA028A4ED85CA7A52611FACFC730</string>
 			<key>IDESourceControlWCCName</key>
 			<string>WeiFang</string>
 		</dict>

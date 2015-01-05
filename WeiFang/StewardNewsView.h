@@ -14,7 +14,7 @@
 #import "ADVDetailView.h"
 #import "NewsDetailView.h"
 
-@interface StewardNewsView : UIViewController<UITableViewDataSource,UITableViewDelegate,EGORefreshTableHeaderDelegate,MBProgressHUDDelegate,IconDownloaderDelegate,SGFocusImageFrameDelegate>
+@interface StewardNewsView : UIViewController<UITableViewDataSource,UITableViewDelegate,EGORefreshTableHeaderDelegate,MBProgressHUDDelegate,IconDownloaderDelegate,SGFocusImageFrameDelegate, UIAlertViewDelegate>
 {
     NSMutableArray *news;
     BOOL isLoading;

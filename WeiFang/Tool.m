@@ -1121,4 +1121,24 @@
     return cateArray;
 }
 
++ (void)saveJsonStrToCommunityTel:(NSString *)cid
+{
+    NSString *detailUrl = [NSString stringWithFormat:@"%@%@?APPKey=%@&id=%@", api_base_url, api_getcinfo, appkey, cid];
+    NSURL *url = [ NSURL URLWithString : detailUrl];
+    // 构造 ASIHTTPRequest 对象
+    ASIHTTPRequest *request = [ ASIHTTPRequest requestWithURL :url];
+    // 开始同步请求
+    [request startSynchronous ];
+    NSData *data = [[request responseString ] dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *error;
+    NSDictionary *communityJsondDic = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+    if ( communityJsondDic == nil ) {
+        return ;
+    }
+    CommunityModel *communityMInfo = [RMMapper objectWithClass:[CommunityModel class] fromDictionary:communityJsondDic];
+    if (communityMInfo.tel != nil && [communityMInfo.tel length] > 0) {
+        [[UserModel Instance] saveValue:communityMInfo.tel ForKey:@"CommunityTel"];
+    }
+}
+
 @end

@@ -9,6 +9,9 @@
 #import "StewardNewsView.h"
 
 @interface StewardNewsView ()
+{
+    UIWebView *phoneWebView;
+}
 
 @end
 
@@ -23,8 +26,27 @@
         [lBtn setImage:[UIImage imageNamed:@"head_back"] forState:UIControlStateNormal];
         UIBarButtonItem *btnBack = [[UIBarButtonItem alloc]initWithCustomView:lBtn];
         self.navigationItem.leftBarButtonItem = btnBack;
+        
+        UIButton *rBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 21, 22)];
+        [rBtn addTarget:self action:@selector(telAction:) forControlEvents:UIControlEventTouchUpInside];
+        [rBtn setImage:[UIImage imageNamed:@"head_tel"] forState:UIControlStateNormal];
+        UIBarButtonItem *btnTel = [[UIBarButtonItem alloc]initWithCustomView:rBtn];
+//        self.navigationItem.rightBarButtonItem = btnTel;
     }
     return self;
+}
+
+- (IBAction)telAction:(id)sender
+{
+    NSString *telNum = [[UserModel Instance] getUserValueForKey:@"CommunityTel"];
+    if (!telNum) {
+        telNum = servicephone;
+    }
+    NSURL *phoneUrl = [NSURL URLWithString:[NSString stringWithFormat:@"tel:%@", telNum]];
+    if (!phoneCallWebView) {
+        phoneCallWebView = [[UIWebView alloc] initWithFrame:CGRectZero];
+    }
+    [phoneCallWebView loadRequest:[NSURLRequest requestWithURL:phoneUrl]];
 }
 
 - (void)backAction
@@ -43,6 +65,16 @@
     titleLabel.textColor = [Tool getColorForGreen];
     titleLabel.textAlignment = UITextAlignmentCenter;
     self.navigationItem.titleView = titleLabel;
+    
+    UserModel *usermodel = [UserModel Instance];
+    if ([[usermodel getUserValueForKey:@"house_number"] isEqualToString:@""]) {
+        UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"温馨提醒"
+                                                     message:@"您的个人信息不完善，此功能暂不能使用，请完善个人信息！"
+                                                    delegate:self
+                                           cancelButtonTitle:nil
+                                           otherButtonTitles:@"确定", nil];
+        [av show];
+    }
     
     //适配iOS7uinavigationbar遮挡问题
     if(IS_IOS7)
@@ -160,12 +192,6 @@
     bannerView.delegate = nil;
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    bannerView.delegate = self;
-}
-
 - (void)viewDidAppear:(BOOL)animated
 {
     if (isInitialize == NO)
@@ -248,7 +274,14 @@
 
         NSString *cid = [[UserModel Instance] getUserValueForKey:@"cid"];
         if (cid != nil && [cid length] > 0) {
+            if ([cid isEqualToString:@"0"] == YES) {
+                return;
+            }
             [tempUrl appendString:[NSString stringWithFormat:@"&cid=%@", cid]];
+        }
+        else
+        {
+            return;
         }
         NSString *url = [NSString stringWithString:tempUrl];
         [[AFOSCClient sharedClient]getPath:url parameters:Nil
@@ -482,6 +515,27 @@
             [self.navigationController pushViewController:newsDetail animated:YES];
             
         }
+    }
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    bannerView.delegate = self;
+    self.navigationController.navigationBar.hidden = NO;
+    UserModel *usermodel = [UserModel Instance];
+    if ([[usermodel getUserValueForKey:@"house_number"] isEqualToString:@""] == NO)
+    {
+        [self reload:YES];
+    }
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0) {
+        UserInfoView *userinfoView = [[UserInfoView alloc] init];
+        userinfoView.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:userinfoView animated:YES];
     }
 }
 

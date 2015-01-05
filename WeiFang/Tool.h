@@ -180,4 +180,6 @@
 + (Design *)readJsonStrToDesignInfo:(NSString *)str;
 + (NSMutableArray *)readJsonStrToJCCate:(NSString *)str;
 
++ (void)saveJsonStrToCommunityTel:(NSString *)cid;
+
 @end

@@ -131,7 +131,7 @@
     else
     {
         if ([project.logo isEqualToString:@""]) {
-            project.imgData = [UIImage imageNamed:@"nopic2.png"];
+            project.imgData = [UIImage imageNamed:@"loadingpic2.png"];
         }
         else
         {

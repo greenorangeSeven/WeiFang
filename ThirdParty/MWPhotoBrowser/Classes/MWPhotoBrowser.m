@@ -81,6 +81,7 @@
     _thumbPhotos = [[NSMutableArray alloc] init];
     _currentGridContentOffset = CGPointMake(0, CGFLOAT_MAX);
     _didSavePreviousStateOfNavBar = NO;
+    _displayTelButton = NO;
     if ([self respondsToSelector:@selector(automaticallyAdjustsScrollViewInsets)]){
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
@@ -159,6 +160,23 @@
 	_pagingScrollView.backgroundColor = [UIColor blackColor];
     _pagingScrollView.contentSize = [self contentSizeForPagingScrollView];
 	[self.view addSubview:_pagingScrollView];
+    
+    // Setup paging telbut view
+    if(_displayTelButton)
+    {
+        _btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        CGRect frame = self.view.bounds;// [[UIScreen mainScreen] bounds];
+        frame.origin.x = (frame.size.width - 80)/2;
+        frame.origin.y = frame.size.height - 45;
+        frame.size.width = 80;
+        frame.size.height = 25;
+        _btn.frame = frame;
+        [_btn setTitle:@"致电咨询" forState:UIControlStateNormal];
+        [_btn setTitle:@"致电咨询" forState:UIControlStateHighlighted];
+        [_btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [_btn addTarget:self action:@selector(telAction:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:_btn];
+    }
 	
     // Toolbar
     _toolbar = [[UIToolbar alloc] initWithFrame:[self frameForToolbarAtOrientation:self.interfaceOrientation]];
@@ -1515,6 +1533,10 @@
                         [weakSelf hideControlsAfterDelay];
                         [weakSelf hideProgressHUD:YES];
                     }];
+                    // iOS 8 - Set the Anchor Point for the popover
+                    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8")) {
+                        self.activityViewController.popoverPresentationController.barButtonItem = _actionButton;
+                    }
                     [self presentViewController:self.activityViewController animated:YES completion:nil];
                     
                 }
@@ -1656,6 +1678,18 @@
 		[alert show];
     }
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)telAction:(id)sender{
+    id <MWPhoto> photo = [self photoAtIndex:_currentPageIndex];
+    if (photo) {
+        NSLog(photo.tel);
+        NSURL *phoneUrl = [NSURL URLWithString:[NSString stringWithFormat:@"tel:%@", photo.tel]];
+        if (!phoneCallWebView) {
+            phoneCallWebView = [[UIWebView alloc] initWithFrame:CGRectZero];
+        }
+        [phoneCallWebView loadRequest:[NSURLRequest requestWithURL:phoneUrl]];
+    }
 }
 
 @end

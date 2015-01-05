@@ -218,6 +218,8 @@
             [userModel saveValue:self.homeAddressLb.text ForKey:@"address"];
             [userModel saveValue:self.emailTf.text ForKey:@"email"];
             [userModel saveValue:self.idCodeTf.text ForKey:@"card_id"];
+            [Tool saveJsonStrToCommunityTel:[userModel getUserValueForKey:@"cid"]];
+            
             UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"温馨提示"
                                                          message:errorMessage
                                                         delegate:nil

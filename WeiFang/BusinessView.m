@@ -61,9 +61,10 @@
     [super viewDidLoad];
     
     hud = [[MBProgressHUD alloc] initWithView:self.view];
-    [Tool showHUD:@"正在定位" andView:self.view andHUD:hud];
+    //    [Tool showHUD:@"正在定位" andView:self.view andHUD:hud];
     _locService = [[BMKLocationService alloc]init];
     _locService.delegate = self;
+    [self reload];
     [self startLocation];
     
     self.tableView.dataSource = self;
@@ -119,24 +120,9 @@
                                    success:^(AFHTTPRequestOperation *operation, id responseObject) {
                                        [shopData removeAllObjects];
                                        @try {
-                                           [shopData removeAllObjects];
                                            noDataLabel.hidden = YES;
                                            shopData = [Tool readJsonStrToShopArray:operation.responseString];
-                                           if (shopData != nil && [shopData count] > 0) {
-                                               //计算当前位置与商家距离
-                                               for (int i = 0; i < [shopData count]; i++) {
-                                                   Shop *temp =[shopData objectAtIndex:(i)];
-                                                   CLLocationCoordinate2D coor;
-                                                   coor.longitude = [temp.longitude doubleValue];
-                                                   coor.latitude = [temp.latitude doubleValue];
-                                                   BMKMapPoint shopPoint = BMKMapPointForCoordinate(coor);
-                                                   CLLocationDistance distanceTmp = BMKMetersBetweenMapPoints(myPoint,shopPoint);
-                                                   temp.distance =(int)distanceTmp;
-                                               }
-                                               [self startArraySort:@"distance" isAscending:YES];
-                                           }
-                                           else
-                                           {
+                                           if (shopData == nil || [shopData count] == 0) {
                                                noDataLabel.hidden = NO;
                                            }
                                            [self.tableView reloadData];
@@ -154,9 +140,28 @@
                                            return;
                                        }
                                        if ([UserModel Instance].isNetworkRunning) {
-                                           [Tool ToastNotification:@"错误 网络无连接" andView:self.view andLoading:NO andIsBottom:NO];
+                                           [Tool showCustomHUD:@"网络不给力" andView:self.view  andImage:@"37x-Failure.png" andAfterDelay:1];
                                        }
                                    }];
+    }
+}
+
+- (void)distanceShop
+{
+    //计算当前位置与商家距离
+    for (int i = 0; i < [shopData count]; i++) {
+        Shop *temp =[shopData objectAtIndex:(i)];
+        CLLocationCoordinate2D coor;
+        coor.longitude = [temp.longitude doubleValue];
+        coor.latitude = [temp.latitude doubleValue];
+        BMKMapPoint shopPoint = BMKMapPointForCoordinate(coor);
+        CLLocationDistance distanceTmp = BMKMetersBetweenMapPoints(myPoint,shopPoint);
+        temp.distance =(int)distanceTmp;
+    }
+    [self startArraySort:@"distance" isAscending:YES];
+    [self.tableView reloadData];
+    if (hud != nil) {
+        [hud hide:YES];
     }
 }
 
@@ -169,7 +174,7 @@
         NSString *url = [NSString stringWithFormat:@"%@%@?APPKey=%@", api_base_url, api_shopcate, appkey];
         [[AFOSCClient sharedClient]getPath:url parameters:Nil
                                    success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                                       [shopData removeAllObjects];
+                                       [shopCateData removeAllObjects];
                                        @try {
                                            shopCateData = [Tool readJsonStrToShopsCate:operation.   responseString];
                                            [self.cateCollection reloadData];
@@ -224,7 +229,7 @@
     }
     Shop *shop = [shopData objectAtIndex:[indexPath row]];
     
-    EGOImageView *imageView = [[EGOImageView alloc] initWithPlaceholderImage:[UIImage imageNamed:@"nopic2.png"]];
+    EGOImageView *imageView = [[EGOImageView alloc] initWithPlaceholderImage:[UIImage imageNamed:@"loadingpic2.png"]];
     imageView.imageURL = [NSURL URLWithString:shop.logo];
     imageView.frame = CGRectMake(0.0f, 0.0f, 116.0f, 61.0f);
     [cell.logo addSubview:imageView];
@@ -232,13 +237,19 @@
     cell.shopTitleLb.text = shop.name;
     cell.summaryLb.text = shop.summary;
     
-    if (shop.distance > 1000) {
-        float disf = ((float)shop.distance)/1000;
-        cell.distanceLb.text = [NSString stringWithFormat:@"距您%.2f千米", disf];
+    if (shop.distance == 0) {
+        cell.distanceLb.hidden = YES;
     }
     else
     {
-        cell.distanceLb.text = [NSString stringWithFormat:@"距您%d米", shop.distance];
+        if (shop.distance > 1000) {
+            float disf = ((float)shop.distance)/1000;
+            cell.distanceLb.text = [NSString stringWithFormat:@"距您%.2f千米", disf];
+        }
+        else
+        {
+            cell.distanceLb.text = [NSString stringWithFormat:@"距您%d米", shop.distance];
+        }
     }
     [Tool roundView:cell.cellbackgroudView andCornerRadius:3.0];
     
@@ -278,7 +289,7 @@
  */
 - (void)mapViewWillStartLocatingUser:(BMKMapView *)mapView
 {
-	NSLog(@"start locate");
+    NSLog(@"start locate");
 }
 
 /**
@@ -300,7 +311,7 @@
     myPoint = BMKMapPointForCoordinate(mycoord);
     //    如果经纬度大于0表单表示定位成功，停止定位
     if (userLocation.location.coordinate.latitude > 0) {
-        [self reload];
+        [self distanceShop];
         [_locService stopUserLocationService];
     }
 }
@@ -352,7 +363,7 @@
     int indexRow = [indexPath row];
     ShopsCate *cate = [shopCateData objectAtIndex:indexRow];
     
-    EGOImageView *imageView = [[EGOImageView alloc] initWithPlaceholderImage:[UIImage imageNamed:@"nopic3.png"]];
+    EGOImageView *imageView = [[EGOImageView alloc] initWithPlaceholderImage:[UIImage imageNamed:@"loadingpic3.png"]];
     imageView.imageURL = [NSURL URLWithString:cate.logo];
     imageView.frame = CGRectMake(15.0f, 9.0f, 50.0f, 50.0f);
     [cell addSubview:imageView];

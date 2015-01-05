@@ -217,7 +217,7 @@
 - (IBAction)yqAction:(id)sender {
     MaterialsView *materialView = [[MaterialsView alloc] init];
     materialView.typeId = @"11";
-    materialView.typeName = @"油漆";
+    materialView.typeName = @"装饰风格";
     materialView.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:materialView animated:YES];
 }

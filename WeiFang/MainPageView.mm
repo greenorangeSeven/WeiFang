@@ -233,6 +233,10 @@
 
 
 - (IBAction)wytzAction:(id)sender {
+    if ([UserModel Instance].isLogin == NO) {
+        [Tool noticeLogin:self.view andDelegate:self andTitle:@""];
+        return;
+    }
     NoticeFrameView *noticeFrame = [[NoticeFrameView alloc] init];
     noticeFrame.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:noticeFrame animated:YES];
@@ -292,6 +296,10 @@
 }
 
 - (IBAction)wyfcAction:(id)sender {
+    if ([UserModel Instance].isLogin == NO) {
+        [Tool noticeLogin:self.view andDelegate:self andTitle:@""];
+        return;
+    }
     StewardNewsView *cityView = [[StewardNewsView alloc] init];
     cityView.typeStr = @"4";
     cityView.typeNameStr = @"物业风采";
@@ -301,6 +309,10 @@
 }
 
 - (IBAction)yzxzAction:(id)sender {
+    if ([UserModel Instance].isLogin == NO) {
+        [Tool noticeLogin:self.view andDelegate:self andTitle:@""];
+        return;
+    }
     StewardNewsView *cityView = [[StewardNewsView alloc] init];
     cityView.typeStr = @"5";
     cityView.typeNameStr = @"业主须知";
@@ -310,6 +322,10 @@
 }
 
 - (IBAction)glgyAction:(id)sender {
+    if ([UserModel Instance].isLogin == NO) {
+        [Tool noticeLogin:self.view andDelegate:self andTitle:@""];
+        return;
+    }
     StewardNewsView *cityView = [[StewardNewsView alloc] init];
     cityView.typeStr = @"6";
     cityView.typeNameStr = @"管理规约";

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "NewsTableView.h"
 
-@interface NoticeFrameView : UIViewController
+@interface NoticeFrameView : UIViewController<UIAlertViewDelegate>
 
 @property (strong, nonatomic) NewsTableView *noticeView;
 @property (strong, nonatomic) NewsTableView *activityView;

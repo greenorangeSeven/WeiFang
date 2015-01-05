@@ -230,6 +230,9 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
         [userModel saveValue:user.credits ForKey:@"credits"];
         [userModel saveValue:user.remark ForKey:@"remark"];
         [userModel saveValue:user.checkin ForKey:@"checkin"];
+        if (![userModel getUserValueForKey:@"CommunityTel"]) {
+            [Tool saveJsonStrToCommunityTel:[userModel getUserValueForKey:@"cid"]];
+        }
     }
 }
 

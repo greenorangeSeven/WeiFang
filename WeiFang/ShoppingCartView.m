@@ -170,7 +170,7 @@
     int indexRow = [indexPath row];
     
     Goods *good = (Goods *)[goodData objectAtIndex:indexRow];
-    EGOImageView *imageView = [[EGOImageView alloc] initWithPlaceholderImage:[UIImage imageNamed:@"nopic2.png"]];
+    EGOImageView *imageView = [[EGOImageView alloc] initWithPlaceholderImage:[UIImage imageNamed:@"loadingpic2.png"]];
     imageView.imageURL = [NSURL URLWithString:good.thumb];
     imageView.frame = CGRectMake(0.0f, 0.0f, 80.0f, 80.0f);
     [cell.picIv addSubview:imageView];

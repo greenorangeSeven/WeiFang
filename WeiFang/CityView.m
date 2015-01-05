@@ -412,7 +412,7 @@
                 else
                 {
                     if ([comm.thumb isEqualToString:@""]) {
-                        comm.imgData = [UIImage imageNamed:@"nopic2"];
+                        comm.imgData = [UIImage imageNamed:@"loadingpic2"];
                     }
                     else
                     {

@@ -29,6 +29,9 @@
     NSUInteger _previousPageIndex;
     CGRect _previousLayoutBounds;
 	NSUInteger _pageIndexBeforeRotation;
+    
+    UIButton *_btn;
+    UIWebView *phoneCallWebView;
 	
 	// Navigation & controls
 	UIToolbar *_toolbar;
@@ -66,6 +69,8 @@
     BOOL _skipNextPagingScrollViewPositioning;
     BOOL _viewHasAppearedInitially;
     CGPoint _currentGridContentOffset;
+    
+    BOOL _displayTelButton;
     
 }
 

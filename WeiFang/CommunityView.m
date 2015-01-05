@@ -281,7 +281,7 @@
             else
             {
                 if ([commer.thumb isEqualToString:@""]) {
-                    commer.imgData = [UIImage imageNamed:@"nopic2"];
+                    commer.imgData = [UIImage imageNamed:@"loadingpic2"];
                 }
                 else
                 {

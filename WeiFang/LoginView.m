@@ -138,6 +138,9 @@
             [userModel saveValue:user.checkin ForKey:@"checkin"];
             [userModel saveValue:user.comm_name ForKey:@"comm_name"];
             [userModel saveValue:user.build_name ForKey:@"build_name"];
+            if (![userModel getUserValueForKey:@"CommunityTel"]) {
+                [Tool saveJsonStrToCommunityTel:[userModel getUserValueForKey:@"cid"]];
+            }
             
             NSArray *tags = [[NSArray alloc] initWithObjects:user.cid, [NSString stringWithFormat:@"userid%@", user.id], nil];
             [BPush setTags:tags];

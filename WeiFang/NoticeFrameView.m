@@ -53,6 +53,15 @@
     [self addChildViewController:self.activityView];
     [self.mainView addSubview:self.noticeView.view];
     [self.mainView addSubview:self.activityView.view];
+    UserModel *usermodel = [UserModel Instance];
+    if ([[usermodel getUserValueForKey:@"house_number"] isEqualToString:@""]) {
+        UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"温馨提醒"
+                                                     message:@"您的个人信息不完善，此功能暂不能使用，请完善个人信息！"
+                                                    delegate:self
+                                           cancelButtonTitle:nil
+                                           otherButtonTitles:@"确定", nil];
+        [av show];
+    }
     
     //适配iOS7  scrollView计算uinavigationbar高度的问题
     if(IS_IOS7)
@@ -86,6 +95,21 @@
 {
     [super viewWillAppear:animated];
     self.navigationController.navigationBar.hidden = NO;
+    UserModel *usermodel = [UserModel Instance];
+    if ([[usermodel getUserValueForKey:@"house_number"] isEqualToString:@""] == NO)
+    {
+        [self.noticeView reloadType:1];
+        [self.activityView reloadType:2];
+    }
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0) {
+        UserInfoView *userinfoView = [[UserInfoView alloc] init];
+        userinfoView.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:userinfoView animated:YES];
+    }
 }
 
 @end

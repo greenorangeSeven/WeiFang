@@ -48,6 +48,13 @@
     
     news = [[NSMutableArray alloc] initWithCapacity:20];
     [self reload:YES];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshNot) name:Notification_RefreshXQTZ object:nil];
+}
+
+- (void)refreshNot
+{
+    [self reload:YES];
 }
 
 - (void)refreshed:(NSNotification *)notification
@@ -113,7 +120,14 @@
         }
         NSString *cid = [[UserModel Instance] getUserValueForKey:@"cid"];
         if (cid != nil && [cid length] > 0) {
+            if ([cid isEqualToString:@"0"] == YES) {
+                return;
+            }
             [tempUrl appendString:[NSString stringWithFormat:@"&cid=%@", cid]];
+        }
+        else
+        {
+            return;
         }
         NSString *url = [NSString stringWithString:tempUrl];
         [[AFOSCClient sharedClient]getPath:url parameters:Nil
