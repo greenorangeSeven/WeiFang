@@ -7,7 +7,7 @@
 //
 
 #import "SettingView.h"
-
+#import "MyRebateView.h"
 
 @implementation SettingView
 @synthesize tableSettings;
@@ -42,8 +42,6 @@
 
 #pragma mark - View lifecycle
 
-#pragma mark - View lifecycle
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -56,7 +54,7 @@
         [self initSettingData];
     }
     else if ([self.typeView isEqualToString:@"my"]) {
-        ((UILabel *)self.navigationItem.titleView).text = @"我的";
+        ((UILabel *)self.navigationItem.titleView).text = @"我";
         [self initMyData];
     }
     
@@ -89,16 +87,17 @@
     self.settingsInSection = [[NSMutableDictionary alloc] initWithCapacity:1];
 
     NSArray *second = [[NSArray alloc] initWithObjects:
+                       
                        [[SettingModel alloc] initWith:@"我的订单" andImg:@"setting_order" andTag:5 andTitle2:nil],
                        [[SettingModel alloc] initWith:@"我的物业费" andImg:@"setting_propertyfee" andTag:6 andTitle2:nil],
                        [[SettingModel alloc] initWith:@"我的停车费" andImg:@"setting_parkfee" andTag:7 andTitle2:nil],
                        [[SettingModel alloc] initWith:@"我的寄件箱" andImg:@"setting_mail" andTag:8 andTitle2:nil],
-//                       [[SettingModel alloc] initWith:@"我的收藏" andImg:@"setting_collect" andTag:9 andTitle2:nil],
+                       [[SettingModel alloc] initWith:@"我的返利码" andImg:@"setting_collect" andTag:9 andTitle2:nil],
                        nil];
 
     
-    [self.settingsInSection setObject:second forKey:@"我的"];
-    self.settings = [[NSArray alloc] initWithObjects:@"我的",nil];
+    [self.settingsInSection setObject:second forKey:@"我"];
+    self.settings = [[NSArray alloc] initWithObjects:@"我",nil];
 }
 
 - (void)refresh
@@ -228,7 +227,14 @@
             break;
         case 9:
         {
-            
+            if (![[UserModel Instance] isLogin])
+            {
+                [Tool showCustomHUD:@"请先登录" andView:self.view andImage:@"37x-Failure.png" andAfterDelay:2];
+                return;
+            }
+            MyRebateView *rebateView = [[MyRebateView alloc] init];
+            rebateView.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:rebateView animated:YES];
         }
             break;
         case 10:

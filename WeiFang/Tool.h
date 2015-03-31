@@ -13,7 +13,6 @@
 #import "MBProgressHUD.h"
 #import <CommonCrypto/CommonCryptor.h>
 #import "RMMapper.h"
-#import <ShareSDK/ShareSDK.h>
 #import "LoginView.h"
 #import "RegisterView.h"
 #import "SettingView.h"
@@ -135,8 +134,6 @@
 + (NSString *)getCache:(NSString *)catalog andType:(int)type andID:(int)_id;
 //保留数值几位小数
 + (NSString *)notRounding:(float)price afterPoint:(int)position;
-+ (void)shareAction:(UIButton *)sender andShowView:(UIView *)view andContent:(NSDictionary *)shareContent;
-
 + (NSString *)databasePath;
 + (void)pushToSettingView:(UINavigationController *)navigationController;
 + (void)pushToMyView:(UINavigationController *)navigationController;
@@ -179,6 +176,7 @@
 + (NSMutableArray *)readJsonStrToDesigns:(NSString *)str;
 + (Design *)readJsonStrToDesignInfo:(NSString *)str;
 + (NSMutableArray *)readJsonStrToJCCate:(NSString *)str;
++ (NSMutableArray *)readJsonStrToJianCaiList:(NSString *)str;
 
 + (void)saveJsonStrToCommunityTel:(NSString *)cid;
 

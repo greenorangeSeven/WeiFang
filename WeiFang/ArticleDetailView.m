@@ -46,15 +46,6 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (IBAction)shareAction:(id)sender {
-    NSDictionary *contentDic = [NSDictionary dictionaryWithObjectsAndKeys:
-                                _art.summary , @"title",
-                                _art.summary, @"summary",
-                                _art.thumb, @"thumb",
-                                nil];
-    [Tool shareAction:sender andShowView:self.view andContent:contentDic];
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];

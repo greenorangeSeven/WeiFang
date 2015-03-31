@@ -8,6 +8,7 @@
 
 #import "StewardPageView.h"
 #import "CommunityServiceView.h"
+#import "JianCai2View.h"
 
 @interface StewardPageView ()
 
@@ -199,11 +200,16 @@
 }
 
 - (IBAction)jdAction:(id)sender {
-    MaterialsView *materialView = [[MaterialsView alloc] init];
-    materialView.typeId = @"4";
-    materialView.typeName = @"家电";
-    materialView.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:materialView animated:YES];
+//    MaterialsView *materialView = [[MaterialsView alloc] init];
+//    materialView.typeId = @"4";
+//    materialView.typeName = @"家电";
+//    materialView.hidesBottomBarWhenPushed = YES;
+//    [self.navigationController pushViewController:materialView animated:YES];
+    JianCai2View *jcView = [[JianCai2View alloc] init];
+    jcView.typeId = @"3";
+    jcView.typeName = @"家电";
+    jcView.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:jcView animated:YES];
 }
 
 - (IBAction)jzgyAction:(id)sender {
@@ -217,33 +223,48 @@
 - (IBAction)yqAction:(id)sender {
     MaterialsView *materialView = [[MaterialsView alloc] init];
     materialView.typeId = @"11";
-    materialView.typeName = @"装饰风格";
+    materialView.typeName = @"装修公司";
     materialView.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:materialView animated:YES];
 }
 
 - (IBAction)jcAction:(id)sender {
-    MaterialsView *materialView = [[MaterialsView alloc] init];
-    materialView.typeId = @"14";
-    materialView.typeName = @"建材";
-    materialView.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:materialView animated:YES];
+//    MaterialsView *materialView = [[MaterialsView alloc] init];
+//    materialView.typeId = @"14";
+//    materialView.typeName = @"建材";
+//    materialView.hidesBottomBarWhenPushed = YES;
+//    [self.navigationController pushViewController:materialView animated:YES];
+    JianCai2View *jcView = [[JianCai2View alloc] init];
+    jcView.typeId = @"1";
+    jcView.typeName = @"建材";
+    jcView.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:jcView animated:YES];
 }
 
 - (IBAction)jjAction:(id)sender {
-    MaterialsView *materialView = [[MaterialsView alloc] init];
-    materialView.typeId = @"12";
-    materialView.typeName = @"家居";
-    materialView.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:materialView animated:YES];
+//    MaterialsView *materialView = [[MaterialsView alloc] init];
+//    materialView.typeId = @"12";
+//    materialView.typeName = @"家居";
+//    materialView.hidesBottomBarWhenPushed = YES;
+//    [self.navigationController pushViewController:materialView animated:YES];
+    JianCai2View *jcView = [[JianCai2View alloc] init];
+    jcView.typeId = @"2";
+    jcView.typeName = @"家居";
+    jcView.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:jcView animated:YES];
 }
 
 - (IBAction)rzAction:(id)sender {
-    MaterialsView *materialView = [[MaterialsView alloc] init];
-    materialView.typeId = @"10";
-    materialView.typeName = @"软装";
-    materialView.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:materialView animated:YES];
+//    MaterialsView *materialView = [[MaterialsView alloc] init];
+//    materialView.typeId = @"10";
+//    materialView.typeName = @"软装";
+//    materialView.hidesBottomBarWhenPushed = YES;
+//    [self.navigationController pushViewController:materialView animated:YES];
+    JianCai2View *jcView = [[JianCai2View alloc] init];
+    jcView.typeId = @"4";
+    jcView.typeName = @"软装";
+    jcView.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:jcView animated:YES];
 }
 
 

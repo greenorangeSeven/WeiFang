@@ -17,13 +17,11 @@
 #import "ShoppingCartView.h"
 #import "BMapKit.h"
 #import <sys/xattr.h>
-#import "WXApi.h"
-#import "WeiboApi.h"
-#import "AlixPayResult.h"
 #import "DataVerifier.h"
 #import "BPush.h"
+#import <AlipaySDK/AlipaySDK.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate, BMKGeneralDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, BMKGeneralDelegate, BPushDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) UITabBarController *tabBarController;

@@ -14,10 +14,10 @@
 #import "FMDatabaseAdditions.h"
 #import "FMDatabaseQueue.h"
 #import "RMMapper.h"
-#import "JSONKit.h"
 #import "PrintObject.h"
 #import "PayOrder.h"
 #import "AlipayUtils.h"
+#import <AlipaySDK/AlipaySDK.h>
 
 @interface ShoppingBuyView () <UIAlertViewDelegate>
 
@@ -70,29 +70,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(buyOK) name:@"buyOK" object:nil];
 }
 
-- (void)buyOK
-{
-   
-    FMDatabase* database=[FMDatabase databaseWithPath:[Tool databasePath]];
-    if (![database open]) {
-        NSLog(@"Open database failed");
-        return;
-    }
-    if (![database tableExists:@"shoppingcart"])
-    {
-        [database executeUpdate:createshoppingcart];
-    }
-    BOOL isOK = [database executeUpdate:@"DELETE FROM shoppingcart"];
-    if(isOK)
-    {
-        NSLog(@"数据已清空");
-    }
-    UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"提示"
-                                                 message:@"支付成功"                         delegate:self
-                                       cancelButtonTitle:@"确定"
-                                       otherButtonTitles:nil];
-    [av show];
-}
+
 
 //弹出框事件
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -255,20 +233,25 @@
     switch (errorCode) {
         case 1:
         {
+            [self deleteSelectGoods];
             UserModel *usermodel = [UserModel Instance];
             PayOrder *pro = [[PayOrder alloc] init];
             pro.out_no = num.serial_no;
             pro.subject = @"潍坊智慧社区订单付款";
             pro.body = @"订单在线付款";
-            pro.price = self.countPrice;
-//            pro.partnerID = [usermodel getUserValueForKey:@"DEFAULT_PARTNER"];
-//            pro.partnerPrivKey = [usermodel getUserValueForKey:@"PRIVATE"];
-//            pro.sellerID = [usermodel getUserValueForKey:@"DEFAULT_SELLER"];
             pro.partnerID = [usermodel getDefaultPartner];
             pro.partnerPrivKey = [usermodel getPrivate];
             pro.sellerID = [usermodel getSeller];
             
-            [AlipayUtils doPay:pro NotifyURL:api_goods_notify AndScheme:@"WeiFangAlipay" seletor:nil target:nil];
+            NSString *orderString = [AlipayUtils getPayStr:pro NotifyURL:api_goods_notify];
+            [[AlipaySDK defaultService] payOrder:orderString fromScheme:@"WeiFangAlipay" callback:^(NSDictionary *resultDic)
+             {
+                 NSString *resultState = resultDic[@"resultStatus"];
+                 if([resultState isEqualToString:ORDER_PAY_OK])
+                 {
+                     [self buyOK];
+                 }
+             }];
         }
             break;
         case 0:
@@ -277,6 +260,48 @@
         }
             break;
     }
+}
+
+- (void)deleteSelectGoods
+{
+    FMDatabase* database=[FMDatabase databaseWithPath:[Tool databasePath]];
+    if (![database open]) {
+        NSLog(@"Open database failed");
+        return;
+    }
+    if (![database tableExists:@"shoppingcart"])
+    {
+        [database executeUpdate:createshoppingcart];
+    }
+    BOOL isOK = [database executeUpdate:@"DELETE FROM shoppingcart where ischeck = '1'"];
+    [database close];
+    if(isOK)
+    {
+        NSLog(@"数据已清空");
+    }
+}
+
+- (void)buyOK
+{
+    FMDatabase* database=[FMDatabase databaseWithPath:[Tool databasePath]];
+    if (![database open]) {
+        NSLog(@"Open database failed");
+        return;
+    }
+    if (![database tableExists:@"shoppingcart"])
+    {
+        [database executeUpdate:createshoppingcart];
+    }
+    BOOL isOK = [database executeUpdate:@"DELETE FROM shoppingcart"];
+    if(isOK)
+    {
+        NSLog(@"数据已清空");
+    }
+    UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"提示"
+                                                 message:@"支付成功"                         delegate:self
+                                       cancelButtonTitle:@"确定"
+                                       otherButtonTitles:nil];
+    [av show];
 }
 
 @end

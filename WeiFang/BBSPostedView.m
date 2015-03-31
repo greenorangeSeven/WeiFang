@@ -62,7 +62,7 @@
     [request setUseCookiePersistence:[[UserModel Instance] isLogin]];
     [request setPostValue:appkey forKey:@"APPKey"];
     UserModel *usermodel = [UserModel Instance];
-    [request setPostValue:@"   " forKey:@"subject"];
+    [request setPostValue:@"111" forKey:@"subject"];
     [request setPostValue:[usermodel getUserValueForKey:@"id"] forKey:@"userid"];
     [request setPostValue:self.cid forKey:@"cid"];
     [request setPostValue:contentStr forKey:@"content"];

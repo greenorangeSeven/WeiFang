@@ -93,6 +93,22 @@
 #define api_jccate @"/get_jc_cate"
 #define api_jclist @"/get_jc_list"
 #define api_getcinfo @"/get_community_info"
+#define api_getjccate @"/get_jiancai_shops_cate"
+#define api_getjcshop @"/get_jiancaishops_list"
+#define api_getjcgoodslist @"/get_jiancai_goodslist"
+#define api_getjcgoodinfo @"/get_jiancaigoods_info"
+#define api_jclingqu @"/lingQu"
+#define api_islingqu @"/is_lingqu"
+#define api_getLingquShop @"/getLingquShop"
+
+#define api_getjjcate @"/get_jiaju_shops_cate"
+#define api_getjjshop @"/get_jiajushops_list"
+
+#define api_getjdcate @"/get_jiadian_shops_cate"
+#define api_getjdshop @"/get_jiadianshops_list"
+
+#define api_getrzcate @"/get_ruanzhuang_shops_cate"
+#define api_getrzshop @"/get_ruanzhuangshops_list"
 
 //商品下单地址
 #define api_send_order @"/send_order"
@@ -154,6 +170,12 @@
 
 #define servicephone @"4006657878"
 
+//订单支付成功状态码
+#define ORDER_PAY_OK @"9000"
+
+//订单支付通知
+#define ORDER_PAY_NOTIC @"ORDER_PAY_NOTIC"
+
 #define SettingTableIdentifier @"SettingTableIdentifier"
 #define MyRepairsCellIdentifier @"MyRepairsCellIdentifier"
 #define NoticeTableCellIdentifier @"NoticeTableCellIdentifier"
@@ -170,6 +192,8 @@
 #define CommunityCellIdentifier @"CommunityCellIdentifier"
 #define ProjectCollectionCellIdentifier @"ProjectCollectionCellIdentifier"
 #define CommunityReplyCellIdentifier @"CommunityReplyCellIdentifier"
+#define MyRebateCellIdentifier @"MyRebateCellIdentifier"
+
 
 #define createshoppingcart @"create table shoppingcart (id integer primary key autoincrement not null,goodid text,title text,thumb text,price text,store_name text,business_id text,number int,user_id text)"
 

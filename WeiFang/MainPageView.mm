@@ -165,6 +165,11 @@
     [super viewWillAppear:animated];
     bannerView.delegate = self;
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+    
+    if ([UserModel Instance].isLogin == YES) {
+        UILabel *titleLabel = (UILabel *)self.navigationItem.titleView;
+        titleLabel.text = [[UserModel Instance] getUserValueForKey:@"comm_name"];
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -335,18 +340,18 @@
 }
 
 
-- (IBAction)shareAction:(id)sender {
-    Advertisement *adv = [advDatas objectAtIndex:advIndex];
-    NSString *shareStr = [Tool flattenHTML:adv.content];
-    if (adv) {
-        NSDictionary *contentDic = [NSDictionary dictionaryWithObjectsAndKeys:
-                                    adv.title , @"title",
-                                    adv.content, @"summary",
-                                    adv.pic, @"thumb",
-                                    nil];
-        [Tool shareAction:sender andShowView:self.view andContent:contentDic];
-    }
-}
+//- (IBAction)shareAction:(id)sender {
+//    Advertisement *adv = [advDatas objectAtIndex:advIndex];
+//    NSString *shareStr = [Tool flattenHTML:adv.content];
+//    if (adv) {
+//        NSDictionary *contentDic = [NSDictionary dictionaryWithObjectsAndKeys:
+//                                    adv.title , @"title",
+//                                    adv.content, @"summary",
+//                                    adv.pic, @"thumb",
+//                                    nil];
+//        [Tool shareAction:sender andShowView:self.view andContent:contentDic];
+//    }
+//}
 
 
 

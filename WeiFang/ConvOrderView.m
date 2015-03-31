@@ -46,15 +46,15 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (void)shareAction:(id)sender
-{
-    NSDictionary *contentDic = [NSDictionary dictionaryWithObjectsAndKeys:
-                                [NSString stringWithFormat:@"%@地址:%@ ,电话:%@", self.shop.title, self.shop.address, self.shop.tel], @"title",
-                                [NSString stringWithFormat:@"%@地址:%@ ,电话:%@", self.shop.title, self.shop.address, self.shop.tel], @"summary",
-                                nil, @"thumb",
-                                nil];
-    [Tool shareAction:sender andShowView:self.view andContent:contentDic];
-}
+//- (void)shareAction:(id)sender
+//{
+//    NSDictionary *contentDic = [NSDictionary dictionaryWithObjectsAndKeys:
+//                                [NSString stringWithFormat:@"%@地址:%@ ,电话:%@", self.shop.title, self.shop.address, self.shop.tel], @"title",
+//                                [NSString stringWithFormat:@"%@地址:%@ ,电话:%@", self.shop.title, self.shop.address, self.shop.tel], @"summary",
+//                                nil, @"thumb",
+//                                nil];
+//    [Tool shareAction:sender andShowView:self.view andContent:contentDic];
+//}
 
 - (void)viewDidLoad
 {

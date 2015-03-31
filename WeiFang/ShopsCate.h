@@ -14,5 +14,6 @@
 @property (nonatomic, retain) NSString *cate_name;
 @property (nonatomic, retain) NSString *logo;
 @property (nonatomic, retain) NSString *sort;
+@property int nameWidth;
 
 @end

@@ -316,7 +316,7 @@
         [view removeFromSuperview];
     }
     
-    StrikeThroughLabel *slabel = [[StrikeThroughLabel alloc] initWithFrame:CGRectMake(0, 0, 59, 21)];
+    StrikeThroughLabel *slabel = [[StrikeThroughLabel alloc] initWithFrame:CGRectMake(0, 0, 77, 21)];
     slabel.text = [NSString stringWithFormat:@"￥%@", good.market_price];
     slabel.font = [UIFont italicSystemFontOfSize:12.0f];
     slabel.strikeThroughEnabled = YES;

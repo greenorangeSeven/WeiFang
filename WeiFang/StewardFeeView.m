@@ -8,7 +8,7 @@
 
 #import "StewardFeeView.h"
 #import "DataSigner.h"
-#import "AlixPayResult.h"
+#import <AlipaySDK/AlipaySDK.h>
 #import "DataVerifier.h"
 #import "AlixPayOrder.h"
 #import "AlipayUtils.h"
@@ -290,14 +290,19 @@
             pro.body = @"潍坊智慧社区物业费在线缴纳";
             double sumMoney = arrearage + presetValue;
             pro.price = sumMoney;
-//            pro.partnerID = [usermodel getUserValueForKey:@"DEFAULT_PARTNER"];
-//            pro.partnerPrivKey = [usermodel getUserValueForKey:@"PRIVATE"];
-//            pro.sellerID = [usermodel getUserValueForKey:@"DEFAULT_SELLER"];
             pro.partnerID = [usermodel getDefaultPartner];
             pro.partnerPrivKey = [usermodel getPrivate];
             pro.sellerID = [usermodel getSeller];
             
-            [AlipayUtils doPay:pro NotifyURL:api_property_notify AndScheme:@"WeiFangAlipay" seletor:nil target:nil];
+            NSString *orderString = [AlipayUtils getPayStr:pro NotifyURL:api_property_notify];
+            [[AlipaySDK defaultService] payOrder:orderString fromScheme:@"WeiFangAlipay" callback:^(NSDictionary *resultDic)
+             {
+                 NSString *resultState = resultDic[@"resultStatus"];
+                 if([resultState isEqualToString:ORDER_PAY_OK])
+                 {
+                     [self updatePayedTable];
+                 }
+             }];
         }
             break;
         case 0:
@@ -306,6 +311,12 @@
         }
             break;
     }
+}
+
+#pragma mark 刷新列表(当程序支付时在后台被kill掉时供appdelegate调用)
+- (void)updatePayedTable
+{
+    [Tool showCustomHUD:@"支付成功" andView:self.view  andImage:@"37x-Failure.png" andAfterDelay:2];
 }
 
 #pragma -mark 显示我的缴费历史

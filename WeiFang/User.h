@@ -36,4 +36,6 @@
 @property (nonatomic, retain) NSString *info;
 @property (nonatomic, retain) NSNumber *status;
 
+@property (nonatomic, retain) NSString *suiji_code;
+
 @end

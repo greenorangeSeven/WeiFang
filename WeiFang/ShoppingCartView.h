@@ -16,7 +16,6 @@
 #import "FMDatabaseAdditions.h"
 #import "FMDatabaseQueue.h"
 #import "RMMapper.h"
-#import "JSONKit.h"
 #import "PrintObject.h"
 
 @interface ShoppingCartView : UIViewController<UITableViewDelegate,UITableViewDataSource,UIActionSheetDelegate>

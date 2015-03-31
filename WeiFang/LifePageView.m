@@ -13,6 +13,7 @@
 #import "BusinessView.h"
 #import "CommunityView.h"
 #import "ProjectCollectionView.h"
+#import "JianCai2View.h"
 
 @interface LifePageView ()
 
@@ -202,6 +203,12 @@
     businessView.hidesBottomBarWhenPushed = YES;
     
     [self.navigationController pushViewController:businessView animated:YES];
+}
+
+- (IBAction)clickJC:(id)sender {
+    JianCai2View *jcView = [[JianCai2View alloc] init];
+    jcView.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:jcView animated:YES];
 }
 
 - (IBAction)clickCommunity:(UIButton *)sender

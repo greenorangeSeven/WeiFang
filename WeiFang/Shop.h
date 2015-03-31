@@ -24,4 +24,8 @@
 @property (nonatomic, retain) NSString *star;
 @property int distance;
 
+@property (nonatomic, retain) UIImage * imgData;
+
+@property (nonatomic, retain) NSString *suiji_code;
+
 @end

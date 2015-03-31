@@ -42,11 +42,11 @@
         UIBarButtonItem *btnBack = [[UIBarButtonItem alloc]initWithCustomView:lBtn];
         self.navigationItem.leftBarButtonItem = btnBack;
         
-        UIButton *rBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 52, 27)];
-        [rBtn addTarget:self action:@selector(shareAction:) forControlEvents:UIControlEventTouchUpInside];
-        [rBtn setImage:[UIImage imageNamed:@"head_share"] forState:UIControlStateNormal];
-        UIBarButtonItem *btnSearch = [[UIBarButtonItem alloc]initWithCustomView:rBtn];
-        self.navigationItem.rightBarButtonItem = btnSearch;
+//        UIButton *rBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 52, 27)];
+//        [rBtn addTarget:self action:@selector(shareAction:) forControlEvents:UIControlEventTouchUpInside];
+//        [rBtn setImage:[UIImage imageNamed:@"head_share"] forState:UIControlStateNormal];
+//        UIBarButtonItem *btnSearch = [[UIBarButtonItem alloc]initWithCustomView:rBtn];
+//        self.navigationItem.rightBarButtonItem = btnSearch;
     }
     return self;
 }
@@ -54,16 +54,6 @@
 - (void)backAction
 {
     [self.navigationController popViewControllerAnimated:YES];
-}
-
-- (void)shareAction:(id)sender
-{
-    NSDictionary *contentDic = [NSDictionary dictionaryWithObjectsAndKeys:
-                                self.commer.content, @"title",
-                                self.commer.content, @"summary",
-                                self.commer.thumb, @"thumb",
-                                nil];
-    [Tool shareAction:sender andShowView:self.view andContent:contentDic];
 }
 
 - (void)viewDidLoad

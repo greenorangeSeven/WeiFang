@@ -28,6 +28,7 @@
 - (IBAction)clickRecharge:(UIButton *)sender;
 - (IBAction)clickSubtle:(UIButton *)sender;
 - (IBAction)clickBusiness:(UIButton *)sender;
+- (IBAction)clickJC:(id)sender;
 
 - (IBAction)clickCommunity:(UIButton *)sender;
 - (IBAction)clickBBS:(id)sender;
