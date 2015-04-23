@@ -222,7 +222,7 @@
 
 - (IBAction)yqAction:(id)sender {
     MaterialsView *materialView = [[MaterialsView alloc] init];
-    materialView.typeId = @"11";
+    materialView.typeId = @"43";
     materialView.typeName = @"装修公司";
     materialView.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:materialView animated:YES];

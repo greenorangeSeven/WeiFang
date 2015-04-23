@@ -17,6 +17,8 @@
 @property (nonatomic, retain) NSString *summary;
 @property (nonatomic, retain) NSString *published;
 @property (nonatomic, retain) NSString *content;
+@property (nonatomic, retain) NSString *hits;
+@property (nonatomic, retain) NSString *phone;
 
 @property (nonatomic, retain) UIImage * imgData;
 

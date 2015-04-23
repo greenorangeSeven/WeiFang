@@ -183,7 +183,7 @@
 }
 
 - (IBAction)telAction:(id)sender {
-    NSURL *phoneUrl = [NSURL URLWithString:[NSString stringWithFormat:@"tel:%@", servicephone]];
+    NSURL *phoneUrl = [NSURL URLWithString:[NSString stringWithFormat:@"tel:%@", self.news.tel]];
     if (!phoneCallWebView) {
         phoneCallWebView = [[UIWebView alloc] initWithFrame:CGRectZero];
     }

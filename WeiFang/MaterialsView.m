@@ -7,6 +7,7 @@
 //
 
 #import "MaterialsView.h"
+#import "MaterialsDetailView.h"
 
 @interface MaterialsView ()
 
@@ -247,27 +248,33 @@
 //UICollectionView被选中时调用的方法
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ([self.photos count] == 0) {
-        NSMutableArray *photos = [[NSMutableArray alloc] init];
-        for (Design *d in materialsArray) {
-            MWPhoto * photo = [MWPhoto photoWithURL:[NSURL URLWithString:d.thumb]];
-            NSString *cleanString = [d.summary stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-            photo.tel = cleanString;
-            [photos addObject:photo];
-        }
-        self.photos = photos;
-    }
-    MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
-    browser.displayActionButton = YES;
-    browser.displayNavArrows = NO;//左右分页切换,默认否
-    browser.displaySelectionButtons = NO;//是否显示选择按钮在图片上,默认否
-    browser.alwaysShowControls = YES;//控制条件控件 是否显示,默认否
-    browser.zoomPhotosToFill = NO;//是否全屏,默认是
-//    browser.wantsFullScreenLayout = YES;//是否全屏
-    browser.displayTelButton = YES;
-    [browser setCurrentPhotoIndex:[indexPath row]];
-    self.navigationController.navigationBar.hidden = NO;
-    [self.navigationController pushViewController:browser animated:YES];
+//    if ([self.photos count] == 0) {
+//        NSMutableArray *photos = [[NSMutableArray alloc] init];
+//        for (Design *d in materialsArray) {
+//            MWPhoto * photo = [MWPhoto photoWithURL:[NSURL URLWithString:d.thumb]];
+//            NSString *cleanString = [d.summary stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+//            photo.tel = cleanString;
+//            [photos addObject:photo];
+//        }
+//        self.photos = photos;
+//    }
+//    MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
+//    browser.displayActionButton = YES;
+//    browser.displayNavArrows = NO;//左右分页切换,默认否
+//    browser.displaySelectionButtons = NO;//是否显示选择按钮在图片上,默认否
+//    browser.alwaysShowControls = YES;//控制条件控件 是否显示,默认否
+//    browser.zoomPhotosToFill = NO;//是否全屏,默认是
+////    browser.wantsFullScreenLayout = YES;//是否全屏
+//    browser.displayTelButton = YES;
+//    [browser setCurrentPhotoIndex:[indexPath row]];
+//    self.navigationController.navigationBar.hidden = NO;
+//    [self.navigationController pushViewController:browser animated:YES];
+    
+    int indexRow = [indexPath row];
+    Design *design = [materialsArray objectAtIndex:indexRow];
+    MaterialsDetailView *detailView = [[MaterialsDetailView alloc] init];
+    detailView.design = design;
+    [self.navigationController pushViewController:detailView animated:YES];
 }
 
 //返回这个UICollectionView是否可以被选择

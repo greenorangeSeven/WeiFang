@@ -72,6 +72,8 @@
 		14129A7D1AC7E3EC00AD50C2 /* openssl_wrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 14129A6C1AC7E3EC00AD50C2 /* openssl_wrapper.m */; };
 		14129A7E1AC7E3EC00AD50C2 /* RSADataSigner.m in Sources */ = {isa = PBXBuildFile; fileRef = 14129A6E1AC7E3EC00AD50C2 /* RSADataSigner.m */; };
 		14129A7F1AC7E3EC00AD50C2 /* RSADataVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 14129A701AC7E3EC00AD50C2 /* RSADataVerifier.m */; };
+		141B55371ACD295700B86C77 /* MaterialsDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 141B55351ACD295700B86C77 /* MaterialsDetailView.m */; };
+		141B55381ACD295700B86C77 /* MaterialsDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 141B55361ACD295700B86C77 /* MaterialsDetailView.xib */; };
 		142E2CDE1A0A569E009553AE /* MyDesignView.m in Sources */ = {isa = PBXBuildFile; fileRef = 142E2CDC1A0A569E009553AE /* MyDesignView.m */; };
 		142E2CDF1A0A569E009553AE /* MyDesignView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 142E2CDD1A0A569E009553AE /* MyDesignView.xib */; };
 		142E2CE31A0A56FC009553AE /* MyDesignCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 142E2CE11A0A56FC009553AE /* MyDesignCell.m */; };
@@ -893,6 +895,9 @@
 		14129A6E1AC7E3EC00AD50C2 /* RSADataSigner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSADataSigner.m; sourceTree = "<group>"; };
 		14129A6F1AC7E3EC00AD50C2 /* RSADataVerifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSADataVerifier.h; sourceTree = "<group>"; };
 		14129A701AC7E3EC00AD50C2 /* RSADataVerifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSADataVerifier.m; sourceTree = "<group>"; };
+		141B55341ACD295700B86C77 /* MaterialsDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialsDetailView.h; sourceTree = "<group>"; };
+		141B55351ACD295700B86C77 /* MaterialsDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaterialsDetailView.m; sourceTree = "<group>"; };
+		141B55361ACD295700B86C77 /* MaterialsDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MaterialsDetailView.xib; sourceTree = "<group>"; };
 		142E2CDB1A0A569E009553AE /* MyDesignView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDesignView.h; sourceTree = "<group>"; };
 		142E2CDC1A0A569E009553AE /* MyDesignView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDesignView.m; sourceTree = "<group>"; };
 		142E2CDD1A0A569E009553AE /* MyDesignView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyDesignView.xib; sourceTree = "<group>"; };
@@ -2082,6 +2087,9 @@
 				148365541A0B15760070DB87 /* MaterialsCollectionCell.h */,
 				148365551A0B15760070DB87 /* MaterialsCollectionCell.m */,
 				148365571A0B159F0070DB87 /* MaterialsCollectionCell.xib */,
+				141B55341ACD295700B86C77 /* MaterialsDetailView.h */,
+				141B55351ACD295700B86C77 /* MaterialsDetailView.m */,
+				141B55361ACD295700B86C77 /* MaterialsDetailView.xib */,
 				14F0CFB81AAF0FFF00F35B6C /* JianCai2View.h */,
 				14F0CFB91AAF0FFF00F35B6C /* JianCai2View.m */,
 				14F0CFBA1AAF0FFF00F35B6C /* JianCai2View.xib */,
@@ -3453,6 +3461,7 @@
 				14A911B119F0A210001C29EE /* LoginView.xib in Resources */,
 				14A9111819F0A1ED001C29EE /* CommunityView.xib in Resources */,
 				14A912D219F0A21F001C29EE /* goods_buy@2x.png in Resources */,
+				141B55381ACD295700B86C77 /* MaterialsDetailView.xib in Resources */,
 				14A912B119F0A21F001C29EE /* ritem-6@2x.png in Resources */,
 				14A911BF19F0A210001C29EE /* MyGoodsCell.xib in Resources */,
 				14A912E219F0A21F001C29EE /* main_subtle@2x.png in Resources */,
@@ -3796,6 +3805,7 @@
 				14129A7E1AC7E3EC00AD50C2 /* RSADataSigner.m in Sources */,
 				14A9109C19F0A1E0001C29EE /* ArticleView.m in Sources */,
 				14A9117C19F0A1FB001C29EE /* CityCell.m in Sources */,
+				141B55371ACD295700B86C77 /* MaterialsDetailView.m in Sources */,
 				14A911BA19F0A210001C29EE /* SearchAdderssView.m in Sources */,
 				14A9113F19F0A1ED001C29EE /* ShoppingBuyView.m in Sources */,
 				14A9112B19F0A1ED001C29EE /* BusinessCateCell.m in Sources */,
@@ -3947,7 +3957,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "ca0330d6-d6c0-42df-beed-5472e962a66d";
+				PROVISIONING_PROFILE = "b34f7f7b-d24b-425d-9b82-cde5ef3d68a0";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -3980,7 +3990,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				PROVISIONING_PROFILE = "ca0330d6-d6c0-42df-beed-5472e962a66d";
+				PROVISIONING_PROFILE = "b34f7f7b-d24b-425d-9b82-cde5ef3d68a0";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -3992,7 +4002,7 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: WEN XIKE (5ACSFNTTZR)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: WEN XIKE (KPRX6RYNKY)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ThirdParty/IQKeyboardManager",
@@ -4025,7 +4035,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ca0330d6-d6c0-42df-beed-5472e962a66d";
+				PROVISIONING_PROFILE = "0a9510f1-f872-4d82-a69c-0c83fd9adb13";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -4036,7 +4046,7 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: WEN XIKE (5ACSFNTTZR)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: WEN XIKE (KPRX6RYNKY)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ThirdParty/IQKeyboardManager",
@@ -4069,7 +4079,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ca0330d6-d6c0-42df-beed-5472e962a66d";
+				PROVISIONING_PROFILE = "0a9510f1-f872-4d82-a69c-0c83fd9adb13";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

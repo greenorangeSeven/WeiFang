@@ -46,7 +46,7 @@
 
 - (void)myAction
 {
-    
+    [Tool pushToMyView:self.navigationController];
 }
 
 - (void)settingAction

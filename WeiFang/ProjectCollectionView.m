@@ -7,6 +7,7 @@
 //
 
 #import "ProjectCollectionView.h"
+#import "UIImageView+WebCache.h"
 
 @interface ProjectCollectionView ()
 
@@ -124,34 +125,36 @@
     cell.imageBg.layer.masksToBounds=YES;
     cell.imageBg.layer.cornerRadius=50.0;    //最重要的是这个地方要设成view高的一半
     
+    [cell.imageIv sd_setImageWithURL:[NSURL URLWithString:project.logo] placeholderImage:[UIImage imageNamed:@"loadingpic2.png"]];
+    
     //图片显示及缓存
-    if (project.imgData) {
-        cell.imageIv.image = project.imgData;
-    }
-    else
-    {
-        if ([project.logo isEqualToString:@""]) {
-            project.imgData = [UIImage imageNamed:@"loadingpic2.png"];
-        }
-        else
-        {
-            NSData * imageData = [_iconCache getImage:[TQImageCache parseUrlForCacheName:project.logo]];
-            if (imageData) {
-                project.imgData = [UIImage imageWithData:imageData];
-                cell.imageIv.image = project.imgData;
-            }
-            else
-            {
-                IconDownloader *downloader = [imageDownloadsInProgress objectForKey:[NSString stringWithFormat:@"%d", [indexPath row]]];
-                if (downloader == nil) {
-                    ImgRecord *record = [ImgRecord new];
-                    NSString *urlStr = project.logo;
-                    record.url = urlStr;
-                    [self startIconDownload:record forIndexPath:indexPath];
-                }
-            }
-        }
-    }
+//    if (project.imgData) {
+//        cell.imageIv.image = project.imgData;
+//    }
+//    else
+//    {
+//        if ([project.logo isEqualToString:@""]) {
+//            project.imgData = [UIImage imageNamed:@"loadingpic2.png"];
+//        }
+//        else
+//        {
+//            NSData * imageData = [_iconCache getImage:[TQImageCache parseUrlForCacheName:project.logo]];
+//            if (imageData) {
+//                project.imgData = [UIImage imageWithData:imageData];
+//                cell.imageIv.image = project.imgData;
+//            }
+//            else
+//            {
+//                IconDownloader *downloader = [imageDownloadsInProgress objectForKey:[NSString stringWithFormat:@"%d", [indexPath row]]];
+//                if (downloader == nil) {
+//                    ImgRecord *record = [ImgRecord new];
+//                    NSString *urlStr = project.logo;
+//                    record.url = urlStr;
+//                    [self startIconDownload:record forIndexPath:indexPath];
+//                }
+//            }
+//        }
+//    }
     return cell;
 }
 

@@ -172,8 +172,8 @@
             [self.getBtn setTitle:@"已领取" forState:UIControlStateDisabled];
             
             NSMutableString *msgTemp = [[NSMutableString alloc] init];
-            msgTemp = [NSMutableString stringWithFormat:@"已成功领取绘生活返利码%@", user.suiji_code];
-            [msgTemp appendString:@"，可在“我的返利码”中查看，您在前往商家店面自主议价后确定最终价格，再出示返利码给商家凭收据或发票联系绘生活可获得领取返利5%的现金。"];
+            msgTemp = [NSMutableString stringWithFormat:@"恭喜您，已成功领取绘生活返利码%@", user.suiji_code];
+            [msgTemp appendString:@"，在首页左上角“我的返利码”中查看，您在前往商家店面自主议价后确定最终价格，下单时再出示返利码给商家凭收据或发票联系绘生活可获得领取返利5％的现金。绘生活热线：4006657878"];
             NSString *msg = [NSString stringWithString:msgTemp];
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"恭喜您" message:msg delegate:nil cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
             [alertView show];

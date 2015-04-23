@@ -7,6 +7,7 @@
 //
 
 #import "BBSTableView.h"
+#import "UIImageView+WebCache.h"
 
 @interface BBSTableView ()
 
@@ -98,7 +99,9 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshTableData) name:Notification_RefreshBBS object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshTableDataAll) name:Notification_ADDBBS object:nil];
     
-    _logoIV.image = _project.imgData;
+//    _logoIV.image = _project.imgData;
+    
+    [_logoIV sd_setImageWithURL:[NSURL URLWithString:_project.logo] placeholderImage:[UIImage imageNamed:@"loadingpic2.png"]];
     
     userId = [[UserModel Instance] getUserValueForKey:@"id"];
 }
@@ -416,20 +419,20 @@
                 //                imageView.frame = CGRectMake(0.0f, 0.0f, cell.imageIv.frame.size.width, cell.imageIv.frame.size.height);
                 //                [cell.imageIv addSubview:imageView];
                 //
-                if (bbs.thumbData == nil)
-                {
-                    IconDownloader *d = [_thumbDownloadsInProgress objectForKey:[NSString stringWithFormat:@"%d", [indexPath row]]];
-                    if (d == nil) {
-                        ImgRecord *r = [ImgRecord new];
-                        r.url = [bbs.thumb objectAtIndex:0];
-                        [self startIconDownload2:r forIndexPath:indexPath];
-                    }
-                }
-                else
-                {
-                    cell.imageIv.image = bbs.thumbData;
-                }
-                
+//                if (bbs.thumbData == nil)
+//                {
+//                    IconDownloader *d = [_thumbDownloadsInProgress objectForKey:[NSString stringWithFormat:@"%d", [indexPath row]]];
+//                    if (d == nil) {
+//                        ImgRecord *r = [ImgRecord new];
+//                        r.url = [bbs.thumb objectAtIndex:0];
+//                        [self startIconDownload2:r forIndexPath:indexPath];
+//                    }
+//                }
+//                else
+//                {
+//                    cell.imageIv.image = bbs.thumbData;
+//                }
+                [cell.imageIv sd_setImageWithURL:[NSURL URLWithString:[bbs.thumb objectAtIndex:0]] placeholderImage:[UIImage imageNamed:@"loadingpic2.png"]];
                 
                 //注册Cell按钮点击事件
                 UITap *clickPicTap = [[UITap alloc] initWithTarget:self action:@selector(clickPicAction:)];
@@ -485,34 +488,36 @@
             [cell.delBtn addTarget:self action:@selector(delAction:) forControlEvents:UIControlEventTouchUpInside];
             cell.delBtn.tag = [indexPath row];
             
+            [cell.facePic sd_setImageWithURL:[NSURL URLWithString:bbs.avatar] placeholderImage:[UIImage imageNamed:@"userface.png"]];
+            
             //头像
-            if (bbs.imgData) {
-                cell.facePic.image = bbs.imgData;
-            }
-            else
-            {
-                if ([bbs.avatar isEqualToString:@""]) {
-                    bbs.imgData = [UIImage imageNamed:@"userface"];
-                }
-                else
-                {
-                    NSData * imageData = [_iconCache getImage:[TQImageCache parseUrlForCacheName:bbs.avatar]];
-                    if (imageData)
-                    {
-                        bbs.imgData = [UIImage imageWithData:imageData];
-                        cell.facePic.image = bbs.imgData;
-                    }
-                    else
-                    {
-                        IconDownloader *downloader = [_imageDownloadsInProgress objectForKey:[NSString stringWithFormat:@"%d", [indexPath row]]];
-                        if (downloader == nil) {
-                            ImgRecord *record = [ImgRecord new];
-                            record.url = bbs.avatar;
-                            [self startIconDownload:record forIndexPath:indexPath];
-                        }
-                    }
-                }
-            }
+//            if (bbs.imgData) {
+//                cell.facePic.image = bbs.imgData;
+//            }
+//            else
+//            {
+//                if ([bbs.avatar isEqualToString:@""]) {
+//                    bbs.imgData = [UIImage imageNamed:@"userface"];
+//                }
+//                else
+//                {
+//                    NSData * imageData = [_iconCache getImage:[TQImageCache parseUrlForCacheName:bbs.avatar]];
+//                    if (imageData)
+//                    {
+//                        bbs.imgData = [UIImage imageWithData:imageData];
+//                        cell.facePic.image = bbs.imgData;
+//                    }
+//                    else
+//                    {
+//                        IconDownloader *downloader = [_imageDownloadsInProgress objectForKey:[NSString stringWithFormat:@"%d", [indexPath row]]];
+//                        if (downloader == nil) {
+//                            ImgRecord *record = [ImgRecord new];
+//                            record.url = bbs.avatar;
+//                            [self startIconDownload:record forIndexPath:indexPath];
+//                        }
+//                    }
+//                }
+//            }
             return cell;
         }
         else
